@@ -36,7 +36,7 @@ while(1):
       while(i<750):
             clear_canvas_now()
             grass.draw_now(400,30)
-            character.draw_now((0+x-i),90+y)
+            character.draw_now((0+x-i),90)
             i=i+2
             delay(0.01)
             
