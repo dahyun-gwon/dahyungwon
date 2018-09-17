@@ -1,8 +1,7 @@
 from pico2d import *
-
+import math
 open_canvas()
 
-os.chdir('D:\\2D게임프로그래밍\\제출\\2016180047\\drills\\drill05')
 
 grass = load_image('grass.png')
 character = load_image('character.png')
@@ -27,7 +26,7 @@ def move_up():
         delay(0.01)
 
 def move_left():
-    pass
+
 
 def move_down():
     pass
@@ -42,7 +41,18 @@ def make_rectangle():
     move_from_left_to_center()
 
 def make_circle():
-    pass
+    cx, cy,r=800//2,600//2,(600-100)//2
+    degree = -90
+    while degree<270:
+
+        radian = math.radians(degree)
+        dx= cx + r * math.cos(radian)
+        y= cy +r * math.sin(radian)
+        clear_canvas_now()
+        grass.draw_now(400,30)
+        character.draw_now(x,y)
+        degree += 1
+        delay(0.01)
 
 while True:
     make_rectangle()
