@@ -7,7 +7,7 @@ grass = load_image('grass.png')
 character = load_image('animation_sheet.png')
 
 def move_203_535():
-      x, y = 800 // 2, 90
+      x, y = 400, 90
       frame = 0
       
       while (x > 203 and y < 535):
@@ -16,8 +16,8 @@ def move_203_535():
             character.clip_draw(frame * 100, 0, 100, 100, x, y)
             update_canvas()
             frame = (frame + 1) % 8
-            x -= 1.3
-            y += 3
+            x -= 1.3 *1.5
+            y += 3 *1.5
             delay(0.05)
             get_events()
 
@@ -47,8 +47,8 @@ def move_535_470():
             character.clip_draw(frame * 100, 100, 100, 100, x, y)
             update_canvas()
             frame = (frame + 1) % 8
-            x += 1.7
-            y += 1
+            x += 1.7*2
+            y += 1*2
             delay(0.05)
             get_events()
 
@@ -107,8 +107,8 @@ def move_510_92():
             character.clip_draw(frame * 100, 100, 100, 100, x, y)
             update_canvas()
             frame = (frame + 1) % 8
-            x += 1.43
-            y -= 1
+            x += 1.43*2.5
+            y -= 1*2.5
             delay(0.05)
             get_events()
 
@@ -122,8 +122,8 @@ def move_692_518():
             character.clip_draw(frame * 100, 100, 100, 100, x, y)
             update_canvas()
             frame = (frame + 1) % 8
-            x += 1
-            y += 2.3
+            x += 1*1.5
+            y += 2.3*1.5
             delay(0.05)
             get_events()
 
@@ -134,11 +134,11 @@ def move_682_336():
       while (x > 682 and y > 336):
             clear_canvas_now()
             grass.draw_now(400, 30)
-            character.clip_draw(frame * 100, 100, 100, 100, x, y)
+            character.clip_draw(frame * 100, 0, 100, 100, x, y)
             update_canvas()
             frame = (frame + 1) % 8
-            x -= 1
-            y -= 18.2
+            x -= 1*0.3
+            y -= 18.2*0.3
             delay(0.05)
             get_events()
 
@@ -164,11 +164,11 @@ def move_400_90():
       while (x > 400 and y > 90):
             clear_canvas_now()
             grass.draw_now(400, 30)
-            character.clip_draw(frame * 100, 100, 100, 100, x, y)
+            character.clip_draw(frame * 100, 0, 100, 100, x, y)
             update_canvas()
             frame = (frame + 1) % 8
-            x -= 1
-            y -= 1.1
+            x -= 1.2*2.5
+            y -= 1*2.5
             delay(0.05)
             get_events()
 
@@ -176,14 +176,14 @@ def move_400_90():
 
 
 while True:
-    #move_203_535()
-    
+    move_203_535()
+
     #move_132_243()
-    
+
     #move_535_470()
     
     #move_477_203()
-    
+
     #move_715_136()
     
     #move_316_225()
@@ -192,8 +192,8 @@ while True:
     
     #move_692_518()
     
-    move_682_336()
+    #move_682_336()
     
-    move_712_349()
+    #move_712_349()
 
     move_400_90()
