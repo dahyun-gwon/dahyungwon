@@ -22,16 +22,36 @@ def move_up():
         clear_canvas_now()
         grass.draw_now(400,30)
         character.draw_now(x,y)
-        x += 2
+        y += 2
         delay(0.01)
 
 def move_left():
+    x, y = 800 - 25, 90
+    while x > 0:
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        character.draw_now(x, y)
+        x -= 2
+        delay(0.01)
 
 
 def move_down():
-    pass
+    x, y = 800 - 25, 90
+    while y < 600 - 50:
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        character.draw_now(x, y)
+        x += 2
+        delay(0.01)
+
 def move_from_left_to_center():
-    pass
+    x, y = 800 // 2, 90
+    while x < 800 - 25:
+        clear_canvas_now()
+        grass.draw_now(400, 30)
+        character.draw_now(x, y)
+        x += 2
+        delay(0.01)
 
 def make_rectangle():
     #move_from_center_to_right()
@@ -46,7 +66,7 @@ def make_circle():
     while degree<270:
 
         radian = math.radians(degree)
-        dx= cx + r * math.cos(radian)
+        x= cx + r * math.cos(radian)
         y= cy +r * math.sin(radian)
         clear_canvas_now()
         grass.draw_now(400,30)
