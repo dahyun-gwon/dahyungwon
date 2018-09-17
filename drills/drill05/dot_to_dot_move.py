@@ -9,6 +9,7 @@ character = load_image('animation_sheet.png')
 def move_203_535():
       x, y = 800 // 2, 90
       frame = 0
+      
       while (x > 203 and y < 535):
             clear_canvas_now()
             grass.draw_now(400, 30)
@@ -22,7 +23,19 @@ def move_203_535():
 
 
 def move_132_243():
-      pass
+      x, y = 203, 535
+      frame=0
+
+      while (x > 132 and y > 243):
+            clear_canvas_now()
+            grass.draw_now(400, 30)
+            character.clip_draw(frame * 100, 0, 100, 100, x, y)
+            update_canvas()
+            frame = (frame + 1) % 8
+            x -= 1
+            y -= 4.2
+            delay(0.05)
+            get_events()
 
 def move_535_470():
       pass
@@ -52,7 +65,7 @@ def move_712_349():
 
 
 while True:
-    move_203_535()
+    #move_203_535()
     
     move_132_243()
     
