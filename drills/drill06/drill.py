@@ -9,15 +9,31 @@ boy=load_image('animation_sheet.png')
 mouse=load_image('hand_arrow.png')
 ground=load_image('KPU_GROUND.png')
 
-global running
+
 def cursor():
-    pass
+    global x, y
+    global go_x,go_y
 
-def move():
-    pass
+    events = get_events()
+    for event in events:
+        if event.type == SDL_MOUSEMOTION:
+            x, y = event.x, KPU_HEIGHT - 1 - event.y
+
+        elif event.type == SDL_KEYDOWN:
+            if event.key==SDL_MOUSEBUTTONDOWN:
+                if event.botton==SDL_BUTTON_LEFT:
+                    go_x,go_y=event.x,event,y
 
 
-running(True)
-while(running):
+
+hide_cursor()
+frame=0
+while(True):
+    clear_canvas()
+    ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
     cursor()
-    move()
+    mouse.draw(x, y)
+    boy.clip_draw(100,0,100,100,go_x,go_y)
+    update_canvas()
+    frame = (frame + 1) % 8
+    delay(0.05)
