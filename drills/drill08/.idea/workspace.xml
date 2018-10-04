@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaabbf61-3122-47ff-a60f-677aa4d68b5a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../drill07/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drill07/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drill08_01.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill08_01.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,12 +31,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="319" />
+          <entry key="py" value="340" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="319" />
+          <entry key="Python" value="340" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -46,11 +47,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/drill08_01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="323">
+              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1538640536724" expanded="true" signature="873:965" ph="..." />
+                <marker date="1538640948730" expanded="true" signature="873:965" ph="..." />
               </folding>
             </state>
           </provider>
@@ -226,11 +227,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/drill08_01.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="323">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1538640536724" expanded="true" signature="873:965" ph="..." />
+            <marker date="1538640948730" expanded="true" signature="873:965" ph="..." />
           </folding>
         </state>
       </provider>
