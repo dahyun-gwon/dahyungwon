@@ -3,28 +3,28 @@ import json
 import os
 
 from pico2d import *
-
 import game_framework
 import title_state
 import pause_state
 
-
-
-name = "mainstate"
+name = "MainState"
 
 boy = None
 grass = None
 font = None
 
 
+class Font:
+    def __init__(self):
+        self.image = load_image('paused.png')
+    def draw(self):
+        self.image.draw(400, 300)
 
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
-
     def draw(self):
         self.image.draw(400, 30)
-
 
 
 class Boy:
@@ -33,20 +33,22 @@ class Boy:
         self.frame = 0
         self.image = load_image('animation_sheet.png')
         self.dir = 1
-        self.to=0
+        self.to=100
 
     def update(self):
         self.frame = (self.frame + 1) % 8
         self.x += self.dir
         if self.x >= 800:
             self.dir = -1
-            self.to=100
-        elif self.x <= 0:
-            self.dir = 1
             self.to=0
 
+        elif self.x <= 0:
+            self.dir = 1
+            self.to=100
+
     def draw(self):
-        self.image.clip_draw(self.frame * 100,self.to, 100, 100, self.x, self.y)
+        self.image.clip_draw(self.frame * 100, self.to, 100, 100, self.x, self.y)
+
 
 
 def enter():
@@ -54,10 +56,11 @@ def enter():
     boy = Boy()
     grass = Grass()
 
+
 def exit():
     global boy, grass
-    del (boy)
-    del (grass)
+    del(boy)
+    del(grass)
 
 
 def pause():
@@ -69,18 +72,23 @@ def resume():
 
 
 def handle_events():
-    events = get_events()
-    for event in events:
-        if event.type == SDL_QUIT:
-            game_framework.quit()
-        elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
-            game_framework.change_state(title_state)
-        elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
+   events = get_events()
+   for event in events:
+       if event.type == SDL_QUIT:
+           game_framework.quit()
+       elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+           game_framework.change_state(title_state)
+       elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
             game_framework.push_state(pause_state)
 
 
+
+
+
+
+
 def update():
-    pass
+    boy.update()
 
 
 def draw():
@@ -88,8 +96,3 @@ def draw():
     grass.draw()
     boy.draw()
     update_canvas()
-
-
-
-
-

@@ -96,12 +96,9 @@ def run(start_state):
         stack[-1].exit()
         stack.pop()
 
-
 def test_game_framework():
     start_state = TestGameState('StartState')
     run(start_state)
-
-
 
 if __name__ == '__main__':
     test_game_framework()

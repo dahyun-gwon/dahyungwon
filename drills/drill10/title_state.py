@@ -5,9 +5,11 @@ import main_state
 name = "TitleState"
 image = None
 
+
 def enter():
     global image
     image = load_image('title.png')
+
 
 def exit():
     global image
@@ -33,12 +35,33 @@ def draw():
     update_canvas()
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 def update():
+
     pass
+
+
+
 
 
 def pause():
+
     pass
+
+
+
 
 
 def resume():
