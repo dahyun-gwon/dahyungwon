@@ -10,7 +10,7 @@ import pause_state
 
 
 
-name = "MainState"
+name = "mainstate"
 
 boy = None
 grass = None
