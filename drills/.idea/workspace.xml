@@ -2,19 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7006d130-a3c2-4f6a-b82c-8a07236dd855" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill10/.idea/drill10.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill10/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill10/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill10/start_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/kpu_credit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/mygame.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/untitled/start_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/연습/geme_framework.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/연습/start_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drill07/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/drill07/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drill08/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/drill08/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drill09/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill06/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill06/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill06/KPU_GROUND.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill06/KPU_GROUND_FULL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill06/animation_sheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill06/drill.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill06/grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/drill09/grass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill06/hand_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10-2/game_framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill10-2/game_framework.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10-2/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill10-2/main_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10-2/mygame.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill10-2/mygame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10-2/pause.png" beforeDir="false" afterPath="$PROJECT_DIR$/drill10-2/pause.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10-2/pause_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill10-2/pause_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10-2/start_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill10-2/start_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10-2/title_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill10-2/title_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/.idea/drill10.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/animation_sheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/game_framework.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/kpu_credit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/main_state.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/mygame.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/pause_state.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/show_files.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/simple_module.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/start_state.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/title.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drill10/title_state.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,59 +48,125 @@
     <session id="-585685169">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.5" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="3" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="3" />
-          <entry key="Python" value="17" />
+          <entry key="Image" value="6" />
+          <entry key="Python" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="png" value="3" />
-          <entry key="py" value="17" />
+          <entry key="png" value="6" />
+          <entry key="py" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="917" />
+          <entry key="py" value="2378" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="917" />
+          <entry key="Python" value="2378" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/연습/mygame.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drill10-2/mygame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="7" selection-start-column="7" selection-end-column="21" />
+            <state relative-caret-position="114">
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
               <folding>
-                <marker date="1539243490621" expanded="true" signature="210:215" ph="..." />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/연습/geme_framework.py">
+        <entry file="file://$PROJECT_DIR$/drill10-2/simple_module.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drill10-2/title_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+            <state>
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drill10-2/start_state.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drill10-2/pause.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drill10-2/game_framework.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1247">
+              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drill10-2/show_files.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/drill10-2/pause_state.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drill10-2/main_state.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1862">
+              <caret line="98" selection-start-line="98" selection-end-line="98" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drill11/grass.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -107,6 +195,14 @@
         <option value="$PROJECT_DIR$/drill10/game_framework.py" />
         <option value="$PROJECT_DIR$/drill10/main_state.py" />
         <option value="$PROJECT_DIR$/drill10/start_state.py" />
+        <option value="$PROJECT_DIR$/drill06/drill.py" />
+        <option value="$PROJECT_DIR$/drill11/boys_team_1000.py" />
+        <option value="$PROJECT_DIR$/drill11/game_framework.py" />
+        <option value="$PROJECT_DIR$/drill11/boy.py" />
+        <option value="$PROJECT_DIR$/dddd/f.py" />
+        <option value="$PROJECT_DIR$/drill10-2/main_state.py" />
+        <option value="$PROJECT_DIR$/drill10-2/game_framework.py" />
+        <option value="$PROJECT_DIR$/drill10-2/mygame.py" />
       </list>
     </option>
   </component>
@@ -132,7 +228,17 @@
             <path>
               <item name="drills" type="b2602c69:ProjectViewProjectNode" />
               <item name="drills" type="462c0819:PsiDirectoryNode" />
-              <item name="drill05" type="462c0819:PsiDirectoryNode" />
+              <item name="drill03" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drills" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drills" type="462c0819:PsiDirectoryNode" />
+              <item name="drill10-2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drills" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drills" type="462c0819:PsiDirectoryNode" />
+              <item name="drill11" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -142,11 +248,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/drill10-2" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\2D게임프로그래밍\제출\2016180047\drills" />
       <recent name="D:\2D게임프로그래밍\제출\2016180047\drills\drill10" />
     </key>
   </component>
@@ -162,8 +269,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.drill10">
-    <configuration name="drill09" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.f">
+    <configuration name="boy" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="drills" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -171,11 +278,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/drill09" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/drill11" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drill09/drill09.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drill11/boy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,7 +291,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="drill10" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="boys_team_1000" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="drills" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -192,11 +299,74 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/drill10" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/drill11" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drill10/drill10.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drill11/boys_team_1000.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="drill" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="drills" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/drill06" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drill06/drill.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="f" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="drills" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dddd" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dddd/f.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mygame" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="drills" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/drill11" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drill11/mygame.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -206,13 +376,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.drill09" />
-      <item itemvalue="Python.drill10" />
+      <item itemvalue="Python.drill" />
+      <item itemvalue="Python.boys_team_1000" />
+      <item itemvalue="Python.boy" />
+      <item itemvalue="Python.mygame" />
+      <item itemvalue="Python.f" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.drill10" />
-        <item itemvalue="Python.drill09" />
+        <item itemvalue="Python.f" />
+        <item itemvalue="Python.mygame" />
+        <item itemvalue="Python.boy" />
+        <item itemvalue="Python.boys_team_1000" />
+        <item itemvalue="Python.drill" />
       </list>
     </recent_temporary>
   </component>
@@ -233,12 +409,12 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24968314" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15462612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32928476" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32658568" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -270,78 +446,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/연습/start_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/연습/start_state.py" />
     <entry file="file://$PROJECT_DIR$/drill10/drill10.py" />
     <entry file="file://$PROJECT_DIR$/drill09/drill09.py" />
-    <entry file="file://$PROJECT_DIR$/drill10/start_state.py">
+    <entry file="file://$PROJECT_DIR$/drill10/start_state.py" />
+    <entry file="file://$PROJECT_DIR$/drill10/grass.png" />
+    <entry file="file://$PROJECT_DIR$/drill10/title_state.py" />
+    <entry file="file://$PROJECT_DIR$/drill10/game_framework.py" />
+    <entry file="file://$PROJECT_DIR$/drill10/main_state.py" />
+    <entry file="file://$PROJECT_DIR$/drill10/pause.py" />
+    <entry file="file://$PROJECT_DIR$/drill10/run_animation.png" />
+    <entry file="file://$PROJECT_DIR$/연습/geme_framework.py" />
+    <entry file="file://$PROJECT_DIR$/연습/mygame.py" />
+    <entry file="file://$PROJECT_DIR$/drill06/drill.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="1425">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill11/boys_team_1000.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drill10/grass.png">
+    <entry file="file://$PROJECT_DIR$/drill11/boy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="135" column="12" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
+          <folding>
+            <marker date="1539589183192" expanded="true" signature="3276:3283" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill11/grass.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill11/grass.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/drill10/title_state.py">
+    <entry file="file://$PROJECT_DIR$/drill11/mygame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drill10/game_framework.py">
+    <entry file="file://$PROJECT_DIR$/dddd/f.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4028">
-          <caret line="212" column="25" selection-start-line="212" selection-start-column="25" selection-end-line="212" selection-end-column="25" />
+        <state relative-caret-position="335">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drill10/main_state.py">
+    <entry file="file://$PROJECT_DIR$/drill11/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3002">
-          <caret line="172" column="19" selection-start-line="172" selection-start-column="19" selection-end-line="172" selection-end-column="19" />
+        <state relative-caret-position="190">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drill10/pause.py">
+    <entry file="file://$PROJECT_DIR$/drill11/game_framework.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill10_1/mygame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drill10/run_animation.png">
+    <entry file="file://$PROJECT_DIR$/drill10-2/main_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1862">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill10-2/simple_module.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill10-2/title_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill10-2/game_framework.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1247">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill10-2/run_animation.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/연습/geme_framework.py">
+    <entry file="file://$PROJECT_DIR$/drill10-2/show_files.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill10-2/start_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state>
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/연습/mygame.py">
+    <entry file="file://$PROJECT_DIR$/drill10-2/pause.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill10-2/mygame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drill10-2/pause_state.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="7" selection-start-column="7" selection-end-column="21" />
           <folding>
-            <marker date="1539243490621" expanded="true" signature="210:215" ph="..." />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>

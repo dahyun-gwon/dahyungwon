@@ -16,7 +16,7 @@ class Pause:
             self.image.draw(400, 300)
 
     def update(self):
-        self.switch = (self.switch + 1) % 5
+        self.switch = (self.switch + 1) % 10
         delay(0.05)
 
 def enter():

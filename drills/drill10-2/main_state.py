@@ -14,11 +14,7 @@ grass = None
 font = None
 
 
-class Font:
-    def __init__(self):
-        self.image = load_image('paused.png')
-    def draw(self):
-        self.image.draw(400, 300)
+
 
 class Grass:
     def __init__(self):
