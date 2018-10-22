@@ -1,77 +1,91 @@
 from pico2d import *
 import game_framework
 
-open_canvas()
+open_canvas(1200,800)
 name = "MainState"
 
 
 
 
-class Fire_Wisp:
-    def __init__(self):
-        self.image = load_image('fire_wisp.png')
-        self.x,self.y=200-50,400+10
-    def draw(self):
-        self.image.draw(self.x,self.y)
-    def update(self):
-        events = get_events()
-        for event in events:
-            if event.key == SDLK_RIGHT:
-                self.x = self.x + 10
-            elif event.key == SDLK_LEFT:
-                self.x = self.x - 10
-            elif event.key==SDLK_UP:
-                self.y=self.y+10
-            elif event.key==SDLK_DOWN:
-                self.y=self.y-10
-
-class Water_Wisp:
-    def __init__(self):
-        self.image = load_image('Watar_wisp.png')
-        self.x,self.y=200-50,400+10
-    def draw(self):
-        self.image.draw(self.x,self.y)
-    def update(self):
-        events = get_events()
-        for event in events:
-            if event.key == SDLK_RIGHT:
-                self.x = self.x + 10
-            elif event.key == SDLK_LEFT:
-                self.x = self.x - 10
-            elif event.key==SDLK_UP:
-                self.y=self.y+10
-            elif event.key==SDLK_DOWN:
-                self.y=self.y-10
-
-class Universe:
-    def __init__(self):
-        self.image=load_image('universe.jpg')
-        self.x,self.y=600,400
-    def draw(self):
-        self.image.draw(self.x,self.y)
 
 
 class Girl:
     def __init__(self):
-        self.x, self.y = 200, 600
+        self.x, self.y = 200, 300
         self.image = load_image('tiena.png')
+        self.x_dir,self.y_dir=0,0
 
-
-    def update(self):
+    def hanlde_events(self):
         events = get_events()
         for event in events:
-            if event.key == SDLK_RIGHT:
-                self.x = self.x + 10
-            elif event.key == SDLK_LEFT:
-                self.x = self.x - 10
-            elif event.key==SDLK_UP:
-                self.y=self.y+10
-            elif event.key==SDLK_DOWN:
-                self.y=self.y-10
+            if event.type == SDL_KEYDOWN:
+                if event.key == SDLK_RIGHT:
+                    self.x_dir += 1
+
+
+                elif event.key == SDLK_LEFT:
+                    self.x_dir -= 1
+
+
+                elif event.key == SDLK_UP:
+                    self.y_dir += 1
+
+
+                elif event.key == SDLK_DOWN:
+                    self.y_dir -= 1
+
+
+            elif event.type== SDL_KEYUP:
+                if event.key == SDLK_RIGHT:
+                    self.x_dir -= 1
+
+
+                elif event.key == SDLK_LEFT:
+                    self.x_dir += 1
+
+
+                elif event.key == SDLK_UP:
+                    self.y_dir -= 1
+
+
+                elif event.key == SDLK_DOWN:
+                    self.y_dir += 1
+    def update(self):
+        global G_x
+        global G_y
+        self.x+=self.x_dir*1
+        self.y+=self.y_dir*1
+        G_x=self.x
+        G_y=self.y
+
 
     def draw(self):
         self.image.draw(self.x,self.y)
 
+class Fire_Wisp:
+    def __init__(self):
+        self.image = load_image('fire_wisp.png')
+        self.x,self.y=G_x,G_y
+
+    def draw(self):
+        self.image.draw(self.x,self.y)
+
+
+
+class Water_Wisp:
+    def __init__(self):
+        self.image = load_image('Watar_wisp.png')
+
+    def draw(self):
+        self.image.draw(G_x,G_y)
+
+
+class Universe:
+    def __init__(self):
+        self.image=load_image('universe.jpg')
+
+    def draw(self):
+        self.image.draw(600,400)
 
 universe=Universe()
 girl=Girl()
@@ -95,13 +109,14 @@ def resume():
 
 
 def handle_events():
-    pass
+    girl.hanlde_events()
+
 
 
 def update():
     girl.update()
-    fire_wisp.update()
-    water_wisp.update()
+
+
 
 
 def draw():
@@ -112,11 +127,15 @@ def draw():
 
 
 while(True):
-    handle_events()
     clear_canvas()
 
-    update()
-    draw()
 
+    draw()
     update_canvas()
+
+    handle_events()
+    update()
+
+
+
 

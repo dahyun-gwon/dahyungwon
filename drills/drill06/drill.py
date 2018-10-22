@@ -1,150 +1,51 @@
 from pico2d import *
 
-2
-
-3
-KPU_WIDTH, KPU_HEIGHT = 1280, 1024
-4
-
-5  # 최종완성
-6
-
-7
-
 
 def handle_events():
-    8
-    global mx, my  # 마우스 좌표
+    global running
+    global dir
+    events = get_events()
+    for event in events:
+        if event.type == SDL_QUIT:
+            running =False
+        elif event.type == SDL_KEYDOWN:
+            if event.key == SDLK_RIGHT:
+                dir+=1
+            elif event.key == SDLK_LEFT:
+                dir-=1
+
+            elif event.key == SDLK_ESCAPE:
+                running = False
+        elif event.type == SDL_KEYUP:
+            if event.key == SDLK_RIGHT:
+                dir -=1
+            elif event.key == SDLK_LEFT:
+                dir +=1
 
 
-9
-global gx, gy  # 클릭한 좌표 ( 캐릭터가 도착해야하는 좌표 )
-10
-global sx, sy  # 시작 좌표 ( 캐릭터의 시작 좌표 )
-11
-global x, y  # 현재 캐릭터의 좌표
-12
-global click
-13
-global count
-14
-global running
-15
 
-16
-events = get_events()
-17
-18
-for event in events:
-    19
-    if event.type == SDL_MOUSEBUTTONDOWN:
-        20
-    gx, gy = event.x, KPU_HEIGHT - 1 - event.y
-21
-sx, sy = x, y
-22
-count = 30
-23
-click = True
-24 elif event.type == SDL_MOUSEMOTION:
-25
-mx, my = event.x, KPU_HEIGHT - 1 - event.y
-26 elif event.type == SDL_KEYDOWN:
-27
-if event.key == SDLK_ESCAPE:
-    28
-    running = False
-29 elif event.type == SDL_QUIT:
-30
-running = False
-31
-
-32
-open_canvas(KPU_WIDTH, KPU_HEIGHT)
-33
-
-34
-MouseIcon = load_image('hand_arrow.png')
-35
-kpu_ground = load_image('KPU_GROUND.png')
-36
+open_canvas()
+grass = load_image('grass.png')
 character = load_image('animation_sheet.png')
-37
-
-38
-x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 
 running = True
-
-click = False
-
-mx, my = 0, 0
-
-gx, gy = 0, 0
-
-sx, sy = 0, 0
-
-count = 30
-direc = 1
-
+x = 800 // 2
 frame = 0
-
-hide_cursor()
-
-
-
-
-
+dir=0
 while running:
-
     clear_canvas()
+    grass.draw(400, 30)
+    if dir>0:
+        character.clip_draw(frame * 100, 100 * 1, 100, 100, x, 90)
+    elif dir<0:
+        character.clip_draw(frame * 100, 100 * 0, 100, 100, x, 90)
+    else:
+        character.clip_draw(frame * 100, 100 * 2, 100, 100, x, 90)
+    update_canvas()
 
-kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
-
-
-
-if click == True:
-
-
-
-if gx - sx > 0:
-
-    direc = 1
-elif gx - sx < 0:
-
-direc = -1
-
-x += (gx - sx) / 30
-
-y += (gy - sy) / 30
-
-count -= 1
-
-if count == 0:
-
-    click = False
-
-
-
-if direc == 1:
-
-    character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
-elif direc == -1:
-
-character.clip_draw(frame * 100, 100 * 0, 100, 100, x, y)
-
-MouseIcon.draw(mx + 25, my - 25)
-
-frame = (frame + 1) % 8
-
-
-update_canvas()
-
-
-
-delay(0.02)
-
-handle_events()
-
+    handle_events()
+    frame = (frame + 1) % 8
+    x += dir*5
+    delay(0.05)
 
 close_canvas()
