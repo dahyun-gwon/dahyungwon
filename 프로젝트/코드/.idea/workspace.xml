@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="24ee3b77-b8bc-4da8-8b52-3ea69fb3e248" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../drills/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../drills/drill06/drill.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill06/drill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_state.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +16,11 @@
     <session id="-1376183707">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -35,31 +38,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1187" />
+          <entry key="py" value="2266" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1187" />
+          <entry key="Python" value="2266" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="159">
+              <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1540224606244" expanded="true" signature="441:446" ph="..." />
-                <marker date="1540224606244" expanded="true" signature="746:1549" ph="..." />
-                <marker date="1540224606244" expanded="true" signature="1604:1707" ph="..." />
-                <marker date="1540224606244" expanded="true" signature="1864:1867" ph="..." />
-                <marker date="1540224606244" expanded="true" signature="1959:1988" ph="..." />
+                <marker date="1540275597632" expanded="true" signature="344:1134" ph="..." />
+                <marker date="1540275597632" expanded="true" signature="1631:1703" ph="..." />
               </folding>
             </state>
           </provider>
@@ -68,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pico2d/pico2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="6175">
               <caret line="336" selection-start-line="336" selection-end-line="336" />
             </state>
           </provider>
@@ -93,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/game_framework.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
-              <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -117,9 +117,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-57" />
-    <option name="y" value="71" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="720" />
+    <option name="y" value="102" />
     <option name="width" value="1022" />
     <option name="height" value="739" />
   </component>
@@ -206,23 +206,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-57" y="71" width="1022" height="739" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15589353" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40231788" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32793522" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32928476" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -232,19 +232,27 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/game_framework.py">
+    <entry file="file://$PROJECT_DIR$/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        <state relative-caret-position="159">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+            <marker date="1540275597632" expanded="true" signature="344:1134" ph="..." />
+            <marker date="1540275597632" expanded="true" signature="1631:1703" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pico2d/pico2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="6175">
           <caret line="336" selection-start-line="336" selection-end-line="336" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tiena.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Watar_wisp.png">
       <provider selected="true" editor-type-id="images" />
@@ -252,21 +260,10 @@
     <entry file="file://$PROJECT_DIR$/universe.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tiena.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_state.py">
+    <entry file="file://$PROJECT_DIR$/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <marker date="1540224606244" expanded="true" signature="441:446" ph="..." />
-            <marker date="1540224606244" expanded="true" signature="746:1549" ph="..." />
-            <marker date="1540224606244" expanded="true" signature="1604:1707" ph="..." />
-            <marker date="1540224606244" expanded="true" signature="1864:1867" ph="..." />
-            <marker date="1540224606244" expanded="true" signature="1959:1988" ph="..." />
-          </folding>
+        <state relative-caret-position="475">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
         </state>
       </provider>
     </entry>
