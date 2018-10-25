@@ -33,7 +33,7 @@ class IdleState:
             boy.velocity -= 1
         elif event == LEFT_UP:
             boy.velocity += 1
-        boy.timer = 1000
+        boy.timer = 100
 
     @staticmethod
     def exit(boy, event):
@@ -120,6 +120,7 @@ class DashState:
         elif event == LEFT_UP:
             boy.velocity += 1
         boy.dir = boy.velocity
+        boy.timer = 1000
 
     @staticmethod
     def exit(boy, event):
@@ -129,9 +130,12 @@ class DashState:
     @staticmethod
     def do(boy):
         boy.frame = (boy.frame + 1) % 8
-        boy.timer -= 1
         boy.x += boy.velocity*3
         boy.x = clamp(25, boy.x, 1600 - 25)
+        boy.timer -= 1
+        if boy.timer == 0:
+            boy.add_event(SHIFT_TIMER)
+
 
     @staticmethod
     def draw(boy):
