@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24ee3b77-b8bc-4da8-8b52-3ea69fb3e248" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tiena_sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../drills/drill11/boy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/boy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../drills/drill11/boys_team_1000.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/boys_team_1000.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../drills/drill11/game_framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/game_framework.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../drills/drill11/grass.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/grass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../drills/drill11/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/main_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../drills/drill11/mygame.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/mygame.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,36 +60,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+            <state>
+              <caret line="100" column="8" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1540429489338" expanded="true" signature="314:1106" ph="..." />
-                <marker date="1540429489338" expanded="true" signature="1711:1712" ph="..." />
-                <marker date="1540429489338" expanded="true" signature="1728:1733" ph="..." />
-                <marker date="1540429489338" expanded="true" signature="1935:2006" ph="..." />
+                <marker date="1540459062247" expanded="true" signature="2748:2752" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/IIT+방문(파견)연수(파견)+프로그램+안내+및+제출서류+양식+공지/main_state.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pico2d/pico2d.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6175">
-              <caret line="336" selection-start-line="336" selection-end-line="336" />
             </state>
           </provider>
         </entry>
@@ -109,10 +88,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game_framework.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-297">
-              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+            <state relative-caret-position="285">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fire_wisp.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -134,11 +118,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="720" />
-    <option name="y" value="102" />
-    <option name="width" value="1022" />
-    <option name="height" value="739" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-11" />
+    <option name="y" value="97" />
+    <option name="width" value="793" />
+    <option name="height" value="734" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -146,6 +130,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,10 +142,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../drills/drill11" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -223,10 +208,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-11" y="97" width="793" height="734" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15589353" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24370861" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -269,9 +254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -287,21 +269,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        <state relative-caret-position="285">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        <state>
+          <caret line="100" column="8" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1540429489338" expanded="true" signature="314:1106" ph="..." />
-            <marker date="1540429489338" expanded="true" signature="1711:1712" ph="..." />
-            <marker date="1540429489338" expanded="true" signature="1728:1733" ph="..." />
-            <marker date="1540429489338" expanded="true" signature="1935:2006" ph="..." />
+            <marker date="1540459062247" expanded="true" signature="2748:2752" ph="..." />
           </folding>
         </state>
       </provider>
