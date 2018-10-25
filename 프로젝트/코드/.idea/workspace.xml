@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="24ee3b77-b8bc-4da8-8b52-3ea69fb3e248" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../drills/drill11/boy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/boy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../drills/drill11/boys_team_1000.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/boys_team_1000.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../drills/drill11/game_framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/game_framework.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../drills/drill11/grass.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/grass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../drills/drill11/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/main_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../drills/drill11/mygame.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill11/mygame.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
