@@ -3,7 +3,17 @@ from pico2d import *
 import game_world
 from fire_basic_attack import Fire_basic_attack
 
-RIGHT_DOWN, LEFT_DOWN, UP_UP, UP_DOWN, DOWN_UP, DOWN_DOWN, RIGHT_UP, LEFT_UP, SPACE, w, e, r, d, f = range(14)
+PIXEL_PER_METER = (10.0/0.3)
+
+RUN_SPEED_KMPH = 30.0
+RUN_SPEED_MPM = (RUN_SPEED_KMPH*1000.0/60.0)
+RUN_SPEED_MPS = (RUN_SPEED_MPM/60.0)
+RUN_SPEED_PPS = (RUN_SPEED_MPS*PIXEL_PER_METER)
+TIME_PER_ACTION = 0.5
+ACTION_PER_TIME = 1.0/TIME_PER_ACTION
+FRAMES_PER_ACTION = 8
+
+RIGHT_DOWN, LEFT_DOWN, UP_UP, UP_DOWN, DOWN_UP, DOWN_DOWN, RIGHT_UP, LEFT_UP, SPACE, w, e, r, d, f, DIAG_UP_LEFT, DIAG_UP_RIGHT, DIAG_DOWN_LEFT, DIAG_DOWN_RIGHT = range(18)
 
 key_event_table = {
     (SDL_KEYDOWN, SDLK_RIGHT): RIGHT_DOWN,
@@ -19,28 +29,33 @@ key_event_table = {
     (SDL_KEYDOWN, SDLK_e): e,
     (SDL_KEYDOWN, SDLK_r): r,
     (SDL_KEYDOWN, SDLK_d): d,
-    (SDL_KEYDOWN, SDLK_f): f
+    (SDL_KEYDOWN, SDLK_f): f,
+    (SDL_KEYDOWN.SDLK_UP and SDLK_LEFT): DIAG_UP_LEFT,
+    (SDL_KEYDOWN.SDLK_UP and SDLK_RIGHT): DIAG_UP_RIGHT,
+    (SDL_KEYDOWN.SDLK_DOWN and SDLK_LEFT): DIAG_DOWN_LEFT,
+    (SDL_KEYDOWN.SDLK_UP and SDLK_RIGHT): DIAG_DOWN_RIGHT
+
 }
 
 class IdleState:
     @staticmethod
     def enter(tiena, event):
         if event == RIGHT_DOWN:
-            tiena.Xvelocity += 1
+            tiena.Xvelocity += RUN_SPEED_PPS
         elif event == LEFT_DOWN:
-            tiena.Xvelocity -= 1
+            tiena.Xvelocity -= RUN_SPEED_PPS
         elif event == RIGHT_UP:
-            tiena.Xvelocity -= 1
+            tiena.Xvelocity -= RUN_SPEED_PPS
         elif event == LEFT_UP:
-            tiena.Xvelocity += 1
+            tiena.Xvelocity += RUN_SPEED_PPS
         elif event == UP_UP:
-            tiena.Yvelocity -= 1
+            tiena.Yvelocity -= RUN_SPEED_PPS
         elif event == UP_DOWN:
-            tiena.Yvelocity+=1
+            tiena.Yvelocity+=RUN_SPEED_PPS
         elif event == DOWN_UP:
-            tiena.Yvelocity+=1
+            tiena.Yvelocity+=RUN_SPEED_PPS
         elif event==DOWN_DOWN:
-            tiena.Yvelocity-=1
+            tiena.Yvelocity-=RUN_SPEED_PPS
 
     @staticmethod
     def exit(tiena, event):
@@ -59,33 +74,34 @@ class IdleState:
 
     @staticmethod
     def do(tiena):
-        tiena.frame = (tiena.frame + 1) % 16
+        tiena.frame = (tiena.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 16
 
 
     @staticmethod
     def draw(tiena):
-            tiena.image.clip_draw(tiena.frame * 200, 0, 200, 200, tiena.x, tiena.y)
+        tiena.image.clip_draw(int(tiena.frame) * 200, 0, 200, 200, tiena.x, tiena.y)
+
 
 class GoState:
 
     @staticmethod
     def enter(tiena, event):
         if event == RIGHT_DOWN:
-            tiena.Xvelocity += 1
+            tiena.Xvelocity += RUN_SPEED_PPS
         elif event == LEFT_DOWN:
-            tiena.Xvelocity -= 1
+            tiena.Xvelocity -= RUN_SPEED_PPS
         elif event == RIGHT_UP:
-            tiena.Xvelocity -= 1
+            tiena.Xvelocity -= RUN_SPEED_PPS
         elif event == LEFT_UP:
-            tiena.Xvelocity += 1
+            tiena.Xvelocity += RUN_SPEED_PPS
         elif event == UP_UP:
-            tiena.Yvelocity -= 1
+            tiena.Yvelocity -= RUN_SPEED_PPS
         elif event == UP_DOWN:
-            tiena.Yvelocity+=1
+            tiena.Yvelocity+=RUN_SPEED_PPS
         elif event == DOWN_UP:
-            tiena.Yvelocity+=1
+            tiena.Yvelocity+=RUN_SPEED_PPS
         elif event==DOWN_DOWN:
-            tiena.Yvelocity-=1
+            tiena.Yvelocity-=RUN_SPEED_PPS
 
     @staticmethod
     def exit(tiena, event):
@@ -104,57 +120,20 @@ class GoState:
 
     @staticmethod
     def do(tiena):
-        tiena.frame=(tiena.frame+1)%16
+        tiena.frame = (tiena.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 16
+        tiena.x += tiena.Xvelocity * game_framework.frame_time
+        tiena.y+=tiena.Yvelocity*game_framework.frame_time
+
 
     @staticmethod
     def draw(tiena):
-        tiena.image.clip_draw(tiena.frame*200,0,200,200,tiena.x,tiena.y)
+        tiena.image.clip_draw(int(tiena.frame) * 200, 0, 200, 200, tiena.x, tiena.y)
 
-
-class Injured_State:
-
-    @staticmethod
-    def enter(tiena, event):
-        if event == RIGHT_DOWN:
-            tiena.Xvelocity += 1
-        elif event == LEFT_DOWN:
-            tiena.Xvelocity -= 1
-        elif event == RIGHT_UP:
-            tiena.Xvelocity -= 1
-        elif event == LEFT_UP:
-            tiena.Xvelocity += 1
-        elif event == UP_UP:
-            tiena.Yvelocity -= 1
-        elif event == UP_DOWN:
-            tiena.Yvelocity+=1
-        elif event == DOWN_UP:
-            tiena.Yvelocity+=1
-        elif event==DOWN_DOWN:
-            tiena.Yvelocity-=1
-
-
-    @staticmethod
-    def exit(boy, event):
-        pass
-
-    @staticmethod
-    def do(tiena):
-        tiena.frame = (tiena.frame + 1) % 16
-        tiena.x += tiena.velocity*3
-        tiena.x = clamp(25, tiena.x, 1600 - 25)
-
-
-    @staticmethod
-    def draw(boy):
-        if boy.velocity == 1:
-            boy.image.clip_draw(boy.frame * 100, 100, 100, 100, boy.x, boy.y)
-        else:
-            boy.image.clip_draw(boy.frame * 100, 0, 100, 100, boy.x, boy.y)
 
 
 next_state_table = {
     IdleState: {RIGHT_DOWN: GoState, LEFT_DOWN: GoState, UP_UP: GoState, UP_DOWN: GoState, DOWN_UP:GoState,DOWN_DOWN:GoState,RIGHT_UP:GoState,LEFT_UP:GoState,SPACE:IdleState},
-    GoState: {RIGHT_DOWN: IdleState, LEFT_DOWN: IdleState, UP_UP: IdleState, UP_DOWN: IdleState,DOWN_UP:IdleState,DOWN_DOWN:IdleState,RIGHT_UP:IdleState,LEFT_UP:IdleState,SPACE:GoState},
+    GoState: {RIGHT_DOWN: IdleState, LEFT_DOWN: IdleState, UP_UP: IdleState, UP_DOWN: IdleState,DOWN_UP:IdleState,DOWN_DOWN:IdleState,RIGHT_UP:IdleState,LEFT_UP:IdleState,SPACE:GoState}
 }
 
 class Tiena:
@@ -186,7 +165,7 @@ class Tiena:
     def draw(self):
         self.cur_state.draw(self)
 
-    def handle_event(self):
+    def handle_event(self,event):
         if (event.type, event.key) in key_event_table:
             key_event = key_event_table[(event.type, event.key)]
             self.add_event(key_event)
