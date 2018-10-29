@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24ee3b77-b8bc-4da8-8b52-3ea69fb3e248" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../drills/drill03/character_moves.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill03/character_moves.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../drills/drill12/boy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../drills/drill12/boy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_framework.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiena.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiena.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wisp.py" beforeDir="false" afterPath="$PROJECT_DIR$/wisp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +71,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tiena.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
+            <state relative-caret-position="-165">
               <caret line="143" column="47" lean-forward="true" selection-start-line="143" selection-start-column="47" selection-end-line="143" selection-end-column="47" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -471,7 +466,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tiena.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
+        <state relative-caret-position="-165">
           <caret line="143" column="47" lean-forward="true" selection-start-line="143" selection-start-column="47" selection-end-line="143" selection-end-column="47" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />

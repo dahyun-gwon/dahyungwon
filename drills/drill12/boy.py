@@ -53,7 +53,7 @@ class IdleState:
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
         boy.timer-=game_framework.frame_time
-        if boy.timer <= 5:
+        if boy.timer <= 0:
             boy.add_event(SLEEP_TIMER)
 
     @staticmethod
@@ -107,41 +107,56 @@ class SleepState:
         boy.goast_y = boy.y
         boy.start_timer=get_time()
         boy.goast_timer=boy.start_timer
-        boy.goast_frame_time_time=0
+        boy.goast_frame_time=0
         boy.i=0
         boy.j=0
         boy.k=0
+
         boy.opacity=(random.randint(0,1000))
 
     @staticmethod
     def exit(boy, event):
-        pass
+        boy.image.opacify(1)
+        boy.i=0
+        boy.j=0
+        boy.k=0
 
     @staticmethod
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
-
+        boy.goast_x = boy.radian * math.cos(math.radians( GOAST_SECOND_SPEED * (boy.goast_frame_time % 1)))+boy.x
+        boy.goast_y = 100 * math.sin(math.radians(720 * (boy.goast_frame_time % 1))) + boy.y * 2
         boy.goast_timer = get_time()
         boy.goast_frame_time = boy.goast_timer - boy.start_timer
         boy.i+=0.1
-        boy.j+=1.7
-        boy.k+=1.7
+        boy.j+=2
+        boy.k+=2
+        boy.opacity = (random.randint(0, 1000))
+
 
     @staticmethod
     def draw(boy):
 
         if boy.dir == 1:
+            boy.image.opacify(1)
             boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2, '', boy.x - 25, boy.y - 25, 100, 100)
             if(boy.i<3.141592 / 2):
-                boy.image.opacify(boy.opacity % 1000)
-                boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2-boy.i, '', boy.x - 25+boy.k,boy.y - 25 +boy.j, 100, 100)
+                boy.image.opacify(boy.opacity)
+                boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2-boy.i, '', boy.x - 25+boy.j,boy.y - 25 +boy.j, 100, 100)
 
-
+            elif(boy.i>=3.141592/2):
+                boy.image.opacify(boy.opacity)
+                boy.image.clip_draw(int(boy.frame) * 100, 100, 100, 100, boy.goast_x, boy.goast_y)
         else:
+            boy.image.opacify(1)
             boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2, '', boy.x + 25, boy.y - 25, 100, 100)
             if (boy.i < 3.141592 / 2):
-                boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2 - boy.i, '',boy.x - 25 + boy.k, boy.y - 25 + boy.j, 100, 100)
+                boy.image.opacify(boy.opacity)
+                boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2+boy.i, '', boy.x+25-boy.k ,boy.y-25+boy.k , 100, 100)
 
+            elif (boy.i >= 3.141592 / 2):
+                boy.image.opacify(boy.opacity)
+                boy.image.clip_draw(int(boy.frame) * 100, 200, 100, 100, boy.goast_x, boy.goast_y)
 
 
 
