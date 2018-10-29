@@ -1,29 +1,28 @@
+import game_framework
 from pico2d import *
 import game_world
-from fire_wisp import Fire_Wisp
-from water_wisp import Water_Wisp
-from leaf_wisp import Leaf_Wisp
-RIGHT_DOWN, LEFT_DOWN,UP_UP,UP_DOWN,DOWN_UP,DOWN_DOWN, RIGHT_UP, LEFT_UP,SPACE,W,E,R,D,F= range(14)
+from fire_basic_attack import Fire_basic_attack
+
+RIGHT_DOWN, LEFT_DOWN, UP_UP, UP_DOWN, DOWN_UP, DOWN_DOWN, RIGHT_UP, LEFT_UP, SPACE, w, e, r, d, f = range(14)
 
 key_event_table = {
     (SDL_KEYDOWN, SDLK_RIGHT): RIGHT_DOWN,
     (SDL_KEYDOWN, SDLK_LEFT): LEFT_DOWN,
-    (SDL_KEYUP,SDLK_UP):UP_UP,
-    (SDL_KEYDOWN,SDLK_UP):UP_DOWN,
-    (SDL_KEYUP,SDLK_DOWN):DOWN_UP,
-    (SDL_KEYDOWN,SDLK_DOWN):DOWN_DOWN,
+    (SDL_KEYUP, SDLK_UP): UP_UP,
+    (SDL_KEYDOWN, SDLK_UP): UP_DOWN,
+    (SDL_KEYUP, SDLK_DOWN): DOWN_UP,
+    (SDL_KEYDOWN, SDLK_DOWN): DOWN_DOWN,
     (SDL_KEYUP, SDLK_RIGHT): RIGHT_UP,
     (SDL_KEYUP, SDLK_LEFT): LEFT_UP,
-    (SDL_KEYDOWN,SDLK_SPACE):SPACE,
-    (SDL_KEYDOWN,SDLK_w):W,
-    (SDL_KEYDOWN,SDLK_e):E,
-    (SDL_KEYDOWN,SDLK_r):R,
-    (SDL_KEYDOWN,SDLK_d):D,
-    (SDL_KEYDOWN,SDLK_f):F
+    (SDL_KEYDOWN, SDLK_SPACE): SPACE,
+    (SDL_KEYDOWN, SDLK_w): w,
+    (SDL_KEYDOWN, SDLK_e): e,
+    (SDL_KEYDOWN, SDLK_r): r,
+    (SDL_KEYDOWN, SDLK_d): d,
+    (SDL_KEYDOWN, SDLK_f): f
 }
 
 class IdleState:
-
     @staticmethod
     def enter(tiena, event):
         if event == RIGHT_DOWN:
@@ -43,31 +42,29 @@ class IdleState:
         elif event==DOWN_DOWN:
             tiena.Yvelocity-=1
 
-
     @staticmethod
     def exit(tiena, event):
         if event==SPACE:
-            tiena.fire_ball()
-        elif event==W:
-            pass
-        elif event==E:
-            pass
-        elif event==R:
-            pass
-        elif event==D:
-            pass
-        elif event==F:
-            pass
+            tiena.fire_basic_attack()
+        elif event==w:
+            tiena.fire_basic_attack()
+        elif event==e:
+            tiena.fire_basic_attack()
+        elif event==r:
+            tiena.fire_basic_attack()
+        elif event==d:
+            tiena.fire_basic_attack()
+        elif event==f:
+            tiena.fire_basic_attack()
 
     @staticmethod
     def do(tiena):
-        tiena.frame = (tiena.frame + 1) % 8
+        tiena.frame = (tiena.frame + 1) % 16
 
 
     @staticmethod
     def draw(tiena):
             tiena.image.clip_draw(tiena.frame * 200, 0, 200, 200, tiena.x, tiena.y)
-
 
 class GoState:
 
@@ -93,17 +90,17 @@ class GoState:
     @staticmethod
     def exit(tiena, event):
         if event==SPACE:
-            tiena.fire_ball()
-        elif event==W:
-            pass
-        elif event==E:
-            pass
-        elif event==R:
-            pass
-        elif event==D:
-            pass
-        elif event==F:
-            pass
+            tiena.fire_basic_attack()
+        elif event==w:
+            tiena.fire_basic_attack()
+        elif event==e:
+            tiena.fire_basic_attack()
+        elif event==r:
+            tiena.fire_basic_attack()
+        elif event==d:
+            tiena.fire_basic_attack()
+        elif event==f:
+            tiena.fire_basic_attack()
 
     @staticmethod
     def do(tiena):
@@ -115,6 +112,8 @@ class GoState:
 
 
 class Injured_State:
+
+    @staticmethod
     def enter(tiena, event):
         if event == RIGHT_DOWN:
             tiena.Xvelocity += 1
@@ -154,11 +153,11 @@ class Injured_State:
 
 
 next_state_table = {
-    IdleState: {RIGHT_UP: GoState, LEFT_UP: GoState, RIGHT_DOWN: GoState, LEFT_DOWN: GoState, UP_UP:GoState,UP_DOWN:GoState,DOWN_UP:GoState,DOWN_DOWN:GoState,SPACE:IdleState},
-    GoState: {RIGHT_UP: IdleState, LEFT_UP: IdleState, LEFT_DOWN: IdleState, RIGHT_DOWN: IdleState,UP_UP:IdleState,UP_DOWN:IdleState,DOWN_UP:IdleState,DOWN_DOWN:IdleState,SPACE:GoState,},
+    IdleState: {RIGHT_DOWN: GoState, LEFT_DOWN: GoState, UP_UP: GoState, UP_DOWN: GoState, DOWN_UP:GoState,DOWN_DOWN:GoState,RIGHT_UP:GoState,LEFT_UP:GoState,SPACE:IdleState},
+    GoState: {RIGHT_DOWN: IdleState, LEFT_DOWN: IdleState, UP_UP: IdleState, UP_DOWN: IdleState,DOWN_UP:IdleState,DOWN_DOWN:IdleState,RIGHT_UP:IdleState,LEFT_UP:IdleState,SPACE:GoState},
 }
-class Tiena:
 
+class Tiena:
     def __init__(self):
         self.image = load_image('tiena_sprite.png')
         self.x_dir,self.y_dir=0,0
@@ -172,22 +171,11 @@ class Tiena:
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
 
-
-
-
-    def basic_attack(self):
-
-        game_world.add_object(ball,1)
-
+    def fire_ball(self):
+        ball = Fire_basic_attack(self.x, self.y, self.dir*3)
+        game_world.add_object(ball, 1)
     def add_event(self, event):
         self.event_que.insert(0, event)
-
-    def hanlde_events(self):
-        if (event.type, event.key) in key_event_table:
-            key_event = key_event_table[(event.type, event.key)]
-            self.add_event(key_event)
-
-
     def update(self):
         self.cur_state.do(self)
         if len(self.event_que) > 0:
@@ -195,10 +183,10 @@ class Tiena:
             self.cur_state.exit(self, event)
             self.cur_state = next_state_table[self.cur_state][event]
             self.cur_state.enter(self, event)
-
     def draw(self):
         self.cur_state.draw(self)
-    def returnX(self):
-        return self.x
-    def returnY(self):
-        return self.y
+
+    def handle_event(self):
+        if (event.type, event.key) in key_event_table:
+            key_event = key_event_table[(event.type, event.key)]
+            self.add_event(key_event)

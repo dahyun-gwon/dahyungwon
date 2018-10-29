@@ -44,13 +44,5 @@ class Leaf_Wisp:
         self.x += self.Xvelocity
         self.y += self.Xvelocity
 
-class Wisp:
-    def wisp(self):
-        global wisp
-        i = 0
-        fire_wisp=Fire_Wisp(self.x-100,self.y+50,self.Xvelocity,self.Yvelocity)
-        water_wisp=Water_Wisp(self.x-100,self.y+50,self.Xvelocity,self.Yvelocity)
-        leaf_wisp=Leaf_Wisp(self.x-100,self.y+50,self.Xvelocity,self.Yvelocity)
-        wisp=(fire_wisp(),water_wisp(),leaf_wisp())
 
 

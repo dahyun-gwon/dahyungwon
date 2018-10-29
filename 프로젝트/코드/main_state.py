@@ -1,60 +1,54 @@
+
 from pico2d import *
 import game_framework
+import game_world
+
 from tiena import Tiena
-from fire_wisp import Fire_Wisp
-open_canvas(1500,800)
+
+
 name = "MainState"
-x = 0
-y = 0
 
-
-
-
-
-
-tiena=Tiena()
-tiena=None
-class Universe:
-    def __init__(self):
-        self.image=load_image('universe.jpg')
-    def draw(self):
-        self.image.draw(600,400)
-
-universe=Universe()
-tiena=Tiena()
-fire_wifp=Fire_Wisp()
-
+tiena = None
 
 def enter():
     global tiena
-    tiena=Tiena()
+    tiena = Tiena()
+    game_world.add_object(tiena, 1)
 
 
 def exit():
-    global tiena
-    del tiena
+    game_world.clear()
+
 def pause():
     pass
+
+
 def resume():
     pass
+
+
 def handle_events():
-    tiena.hanlde_events()
+    events = get_events()
+    for event in events:
+        if event.type == SDL_QUIT:
+            game_framework.quit()
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+            game_framework.quit()
+        else:
+            tiena.handle_event(event)
 
 
 def update():
-    tiena.update()
-    fire.update()
+    for game_object in game_world.all_objects():
+        game_object.update()
+        delay(0.01)
 
 
 def draw():
     clear_canvas()
-    universe.draw()
-    tiena.draw()
-    fire.draw()
+    for game_object in game_world.all_objects():
+        game_object.draw()
     update_canvas()
-
-
-
 
 
 

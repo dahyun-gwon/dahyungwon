@@ -2,25 +2,23 @@ import game_framework
 import math
 from pico2d import *
 from ball import Ball
+import random
 
 import game_world
 
 # Boy Run Speed
 PIXEL_PER_METER = (10.0/0.3)
+
 RUN_SPEED_KMPH = 20.0
 RUN_SPEED_MPM = (RUN_SPEED_KMPH*1000.0/60.0)
 RUN_SPEED_MPS = (RUN_SPEED_MPM/60.0)
 RUN_SPEED_PPS = (RUN_SPEED_MPS*PIXEL_PER_METER)
-
-# Boy Action Speed
-# fill expressions correctly
+GOAST_SECOND_SPEED=720
 TIME_PER_ACTION = 0.5
 ACTION_PER_TIME = 1.0/TIME_PER_ACTION
 FRAMES_PER_ACTION = 8
 
 
-
-# Boy Event
 RIGHT_DOWN, LEFT_DOWN, RIGHT_UP, LEFT_UP, SLEEP_TIMER, SPACE = range(6)
 
 key_event_table = {
@@ -30,9 +28,6 @@ key_event_table = {
     (SDL_KEYUP, SDLK_LEFT): LEFT_UP,
     (SDL_KEYDOWN, SDLK_SPACE): SPACE
 }
-
-
-# Boy States
 
 class IdleState:
 
@@ -107,6 +102,16 @@ class SleepState:
     @staticmethod
     def enter(boy, event):
         boy.frame = 0
+        boy.radian = PIXEL_PER_METER * 3
+        boy.goast_x = boy.x
+        boy.goast_y = boy.y
+        boy.start_timer=get_time()
+        boy.goast_timer=boy.start_timer
+        boy.goast_frame_time_time=0
+        boy.i=0
+        boy.j=0
+        boy.k=0
+        boy.opacity=(random.randint(0,1000))
 
     @staticmethod
     def exit(boy, event):
@@ -115,32 +120,27 @@ class SleepState:
     @staticmethod
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
-        z = 0
-        z = z + 1
-        boy.gx = 220 * math.cos(math.radians(z))
-        boy.gy = 220 * math.sin(math.radians(z))
+
+        boy.goast_timer = get_time()
+        boy.goast_frame_time = boy.goast_timer - boy.start_timer
+        boy.i+=0.1
+        boy.j+=1.7
+        boy.k+=1.7
 
     @staticmethod
     def draw(boy):
+
         if boy.dir == 1:
             boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2, '', boy.x - 25, boy.y - 25, 100, 100)
+            if(boy.i<3.141592 / 2):
+                boy.image.opacify(boy.opacity % 1000)
+                boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2-boy.i, '', boy.x - 25+boy.k,boy.y - 25 +boy.j, 100, 100)
+
+
         else:
             boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2, '', boy.x + 25, boy.y - 25, 100, 100)
-        boy.image.clip_draw(int(boy.frame) * 100, 100, 100, 100, boy.gx, boy.gy)
-
-
-
-class Goast:
-
-    @staticmethod
-    def enter(boy, event):
-        boy.frame = 0
-
-    @staticmethod
-    def exit(boy, event):
-        pass
-
-
+            if (boy.i < 3.141592 / 2):
+                boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2 - boy.i, '',boy.x - 25 + boy.k, boy.y - 25 + boy.j, 100, 100)
 
 
 
@@ -159,7 +159,6 @@ class Boy:
 
     def __init__(self):
         self.x, self.y = 1600 // 2, 90
-        self.gx,self.gy=self.x,self.y
         # Boy is only once created, so instance image loading is fine
         self.image = load_image('animation_sheet.png')
         self.font=load_font('ENCR10B.TTF',16)
