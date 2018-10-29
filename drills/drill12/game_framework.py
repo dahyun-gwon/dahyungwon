@@ -92,7 +92,7 @@ def run(start_state):
     stack = [start_state]
     start_state.enter()
     global frame_time
-    current_time = time.time()
+    current_time=time.time()
     while (running):
         stack[-1].handle_events()
         stack[-1].update()
@@ -100,6 +100,7 @@ def run(start_state):
         frame_time=time.time()-current_time
         frame_rate=1.0/frame_time
         current_time+=frame_time
+
 
 
     # repeatedly delete the top of the stack

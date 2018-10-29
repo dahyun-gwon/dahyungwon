@@ -1,4 +1,5 @@
 import game_framework
+import math
 from pico2d import *
 from ball import Ball
 
@@ -45,7 +46,7 @@ class IdleState:
             boy.velocity -= RUN_SPEED_PPS
         elif event == LEFT_UP:
             boy.velocity += RUN_SPEED_PPS
-        boy.timer = 1000
+        boy.timer = 10-1
 
     @staticmethod
     def exit(boy, event):
@@ -56,8 +57,8 @@ class IdleState:
     @staticmethod
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
-        boy.timer =game_framework.frame_time
-        if boy.timer == 10:
+        boy.timer-=game_framework.frame_time
+        if boy.timer <= 5:
             boy.add_event(SLEEP_TIMER)
 
     @staticmethod
@@ -114,6 +115,10 @@ class SleepState:
     @staticmethod
     def do(boy):
         boy.frame = (boy.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 8
+        z = 0
+        z = z + 1
+        boy.gx = 220 * math.cos(math.radians(z))
+        boy.gy = 220 * math.sin(math.radians(z))
 
     @staticmethod
     def draw(boy):
@@ -121,6 +126,23 @@ class SleepState:
             boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2, '', boy.x - 25, boy.y - 25, 100, 100)
         else:
             boy.image.clip_composite_draw(int(boy.frame) * 100, 200, 100, 100, -3.141592 / 2, '', boy.x + 25, boy.y - 25, 100, 100)
+        boy.image.clip_draw(int(boy.frame) * 100, 100, 100, 100, boy.gx, boy.gy)
+
+
+
+class Goast:
+
+    @staticmethod
+    def enter(boy, event):
+        boy.frame = 0
+
+    @staticmethod
+    def exit(boy, event):
+        pass
+
+
+
+
 
 
 
@@ -130,13 +152,14 @@ class SleepState:
 next_state_table = {
     IdleState: {RIGHT_UP: RunState, LEFT_UP: RunState, RIGHT_DOWN: RunState, LEFT_DOWN: RunState, SLEEP_TIMER: SleepState, SPACE: IdleState},
     RunState: {RIGHT_UP: IdleState, LEFT_UP: IdleState, LEFT_DOWN: IdleState, RIGHT_DOWN: IdleState, SPACE: RunState},
-    SleepState: {LEFT_DOWN: RunState, RIGHT_DOWN: RunState, LEFT_UP: RunState, RIGHT_UP: RunState, SPACE: IdleState}
+    SleepState: {LEFT_DOWN: RunState, RIGHT_DOWN: RunState, LEFT_UP: RunState, RIGHT_UP: RunState, SPACE: IdleState},
 }
 
 class Boy:
 
     def __init__(self):
         self.x, self.y = 1600 // 2, 90
+        self.gx,self.gy=self.x,self.y
         # Boy is only once created, so instance image loading is fine
         self.image = load_image('animation_sheet.png')
         self.font=load_font('ENCR10B.TTF',16)
@@ -145,6 +168,7 @@ class Boy:
         self.frame = 0
         self.event_que = []
         self.cur_state = IdleState
+
         self.cur_state.enter(self, None)
 
 
@@ -166,7 +190,7 @@ class Boy:
 
     def draw(self):
         self.cur_state.draw(self)
-        self.font.draw(self.x - 60, self.y + 50, '(Time: %3.2f)' % get_time(), (255, 255, 0))
+        self.font.draw(self.x - 60, self.y + 50, '(Time: %3.2f)' %get_time(), (255, 255, 0))
 
     def handle_event(self, event):
         if (event.type, event.key) in key_event_table:
