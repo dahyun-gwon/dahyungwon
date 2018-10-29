@@ -13,7 +13,7 @@ TIME_PER_ACTION = 0.5
 ACTION_PER_TIME = 1.0/TIME_PER_ACTION
 FRAMES_PER_ACTION = 8
 
-RIGHT_DOWN, LEFT_DOWN, UP_UP, UP_DOWN, DOWN_UP, DOWN_DOWN, RIGHT_UP, LEFT_UP, SPACE, w, e, r, d, f, DIAG_UP_LEFT, DIAG_UP_RIGHT, DIAG_DOWN_LEFT, DIAG_DOWN_RIGHT = range(18)
+RIGHT_DOWN, LEFT_DOWN, UP_UP, UP_DOWN, DOWN_UP, DOWN_DOWN, RIGHT_UP, LEFT_UP, SPACE, w, e, r, d, f = range(14)
 
 key_event_table = {
     (SDL_KEYDOWN, SDLK_RIGHT): RIGHT_DOWN,
@@ -30,10 +30,6 @@ key_event_table = {
     (SDL_KEYDOWN, SDLK_r): r,
     (SDL_KEYDOWN, SDLK_d): d,
     (SDL_KEYDOWN, SDLK_f): f,
-    (SDL_KEYDOWN.SDLK_UP and SDLK_LEFT): DIAG_UP_LEFT,
-    (SDL_KEYDOWN.SDLK_UP and SDLK_RIGHT): DIAG_UP_RIGHT,
-    (SDL_KEYDOWN.SDLK_DOWN and SDLK_LEFT): DIAG_DOWN_LEFT,
-    (SDL_KEYDOWN.SDLK_UP and SDLK_RIGHT): DIAG_DOWN_RIGHT
 
 }
 
@@ -103,6 +99,7 @@ class GoState:
         elif event==DOWN_DOWN:
             tiena.Yvelocity-=RUN_SPEED_PPS
 
+
     @staticmethod
     def exit(tiena, event):
         if event==SPACE:
@@ -150,8 +147,8 @@ class Tiena:
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
 
-    def fire_ball(self):
-        ball = Fire_basic_attack(self.x, self.y, self.dir*3)
+    def fire_basic_attack(self):
+        ball = Fire_basic_attack(self.x, self.y, 3)
         game_world.add_object(ball, 1)
     def add_event(self, event):
         self.event_que.insert(0, event)
