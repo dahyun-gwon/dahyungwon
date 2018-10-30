@@ -3,21 +3,22 @@ from pico2d import *
 import game_framework
 import game_world
 
-from tiena import Tiena
 from wisp import Wisp
+from tiena import Tiena
+
 
 name = "MainState"
 
-tiena = None
 wisp=None
+tiena = None
 
 def enter():
-    global tiena
     global wisp
+    global tiena
+    wisp = Wisp()
     tiena = Tiena()
-    wisp=Wisp()
+    game_world.add_object(wisp, 1)
     game_world.add_object(tiena, 1)
-    game_world.add_object(wisp,1)
 
 
 def exit():
@@ -40,6 +41,7 @@ def handle_events():
             game_framework.quit()
         else:
             tiena.handle_event(event)
+            wisp.handle_event(event)
 
 
 def update():

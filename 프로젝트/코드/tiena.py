@@ -1,11 +1,8 @@
 import game_framework
 from pico2d import *
 import game_world
-from fire_basic_attack import Fire_basic_attack
-from wisp import Fire_Wisp
-from wisp import Water_Wisp
-from wisp import Leaf_Wisp
-import wisp
+
+
 
 PIXEL_PER_METER = (10.0/0.3)
 i=1
@@ -16,9 +13,7 @@ RUN_SPEED_PPS = (RUN_SPEED_MPS*PIXEL_PER_METER)
 TIME_PER_ACTION = 0.5
 ACTION_PER_TIME = 1.0/TIME_PER_ACTION
 FRAMES_PER_ACTION = 8
-RIGHT_DOWN, LEFT_DOWN, UP_UP, UP_DOWN, DOWN_UP, DOWN_DOWN, RIGHT_UP, LEFT_UP, SPACE, w, e, r= range(12)
-
-Wisp=(Fire_Wisp,Water_Wisp,Leaf_Wisp)
+RIGHT_DOWN, LEFT_DOWN, UP_UP, UP_DOWN, DOWN_UP, DOWN_DOWN, RIGHT_UP, LEFT_UP, w, e, r= range(11)
 
 #DIAG_LEFTUP_UP,DIAG_RIGHTUP_UP,DIAG_LEFTDOWN_UP,DIAG_RIGHTDOWN_UP,DIAG_LEFTUP_DOWN,DIAG_RIGHTUP_DOWN,DIAG_LEFTDOWN_DOWN,DIAG_RIGHTDOWN_DOWN
 
@@ -31,7 +26,6 @@ key_event_table = {
     (SDL_KEYDOWN, SDLK_DOWN): DOWN_DOWN,
     (SDL_KEYUP, SDLK_RIGHT): RIGHT_UP,
     (SDL_KEYUP, SDLK_LEFT): LEFT_UP,
-    (SDL_KEYDOWN, SDLK_SPACE): SPACE,
     (SDL_KEYDOWN, SDLK_w): w,
     (SDL_KEYDOWN, SDLK_e): e,
     (SDL_KEYDOWN, SDLK_r): r
@@ -70,24 +64,20 @@ class IdleState:
 
     @staticmethod
     def exit(tiena, event):
-        if event==SPACE:
-            tiena.fire_basic_attack()
-        elif event==w:
-            tiena.fire_basic_attack()
-        elif event==e:
-            tiena.fire_basic_attack()
-        elif event==r:
-            tiena.fire_basic_attack()
+        pass
 
 
     @staticmethod
     def do(tiena):
         tiena.frame = (tiena.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 16
+        tiena.x += tiena.Xvelocity * game_framework.frame_time
+        tiena.y += tiena.Yvelocity * game_framework.frame_time
 
 
     @staticmethod
     def draw(tiena):
-        tiena.image.clip_draw(int(tiena.frame) * 150, 0, 150, 150, tiena.x, tiena.y)
+        tiena.idle_image.clip_draw(int(tiena.frame) * 150, 0, 150, 150, tiena.x, tiena.y)
+
 
 
 class GoState:
@@ -110,24 +100,11 @@ class GoState:
             tiena.Yvelocity+=RUN_SPEED_PPS
         elif event==DOWN_DOWN:
             tiena.Yvelocity-=RUN_SPEED_PPS
-        elif event==RIGHT_DOWN and UP_DOWN:
-            tiena.Xvelocity+=RUN_SPEED_PPS
-            tiena.Yvelocity+=RUN_SPEED_PPS
-        elif event==LEFT_UP and DOWN_UP:
-            tiena.Xvelocity++RUN_SPEED_PPS
-            tiena.Yvelocity+=RUN_SPEED_PPS
 
 
     @staticmethod
     def exit(tiena, event):
-        if event==SPACE:
-            tiena.fire_basic_attack()
-        elif event==w:
-            tiena.fire_basic_attack()
-        elif event==e:
-            tiena.fire_basic_attack()
-        elif event==r:
-            tiena.fire_basic_attack()
+        pass
 
 
     @staticmethod
@@ -143,14 +120,16 @@ class GoState:
 
 
 
+
 next_state_table = {
-    IdleState: {RIGHT_DOWN: GoState, LEFT_DOWN: GoState, UP_UP: GoState, UP_DOWN: GoState, DOWN_UP:GoState,DOWN_DOWN:GoState,RIGHT_UP:GoState,LEFT_UP:GoState,SPACE:IdleState},
-    GoState: {RIGHT_DOWN: IdleState, LEFT_DOWN: IdleState, UP_UP: IdleState, UP_DOWN: IdleState,DOWN_UP:IdleState,DOWN_DOWN:IdleState,RIGHT_UP:IdleState,LEFT_UP:IdleState,SPACE:GoState},
+    IdleState: {RIGHT_DOWN: GoState, LEFT_DOWN: GoState, UP_UP: GoState, UP_DOWN: GoState, DOWN_UP:GoState,DOWN_DOWN:GoState,RIGHT_UP:GoState,LEFT_UP:GoState},
+    GoState: {RIGHT_DOWN: IdleState, LEFT_DOWN: IdleState, UP_UP: IdleState, UP_DOWN: IdleState,DOWN_UP:IdleState,DOWN_DOWN:IdleState,RIGHT_UP:IdleState,LEFT_UP:IdleState},
 }
 
 class Tiena:
     def __init__(self):
         self.image = load_image('tiena_sprite.png')
+        self.idle_image=load_image('tiena_idle.png')
         self.x_dir,self.y_dir=0,0
         self.x = 500
         self.y = 500
@@ -161,12 +140,10 @@ class Tiena:
         self.event_que = []
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
-    def wisp(self):
-        pass
 
-    def fire_basic_attack(self):
-        ball = Fire_basic_attack(self.x, self.y, 3)
-        game_world.add_object(ball, 1)
+
+
+
     def add_event(self, event):
         self.event_que.insert(0, event)
     def update(self):
