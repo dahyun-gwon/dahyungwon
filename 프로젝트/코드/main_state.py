@@ -4,16 +4,20 @@ import game_framework
 import game_world
 
 from tiena import Tiena
-
+from wisp import Wisp
 
 name = "MainState"
 
 tiena = None
+wisp=None
 
 def enter():
     global tiena
+    global wisp
     tiena = Tiena()
+    wisp=Wisp()
     game_world.add_object(tiena, 1)
+    game_world.add_object(wisp,1)
 
 
 def exit():
