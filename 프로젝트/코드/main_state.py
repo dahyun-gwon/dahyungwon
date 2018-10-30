@@ -2,7 +2,7 @@
 from pico2d import *
 import game_framework
 import game_world
-
+from background import Background
 from wisp import Wisp
 from tiena import Tiena
 
@@ -15,8 +15,11 @@ tiena = None
 def enter():
     global wisp
     global tiena
+    global background
+    background = Background()
     wisp = Wisp()
     tiena = Tiena()
+    game_world.add_object(background,0)
     game_world.add_object(wisp, 1)
     game_world.add_object(tiena, 1)
 
