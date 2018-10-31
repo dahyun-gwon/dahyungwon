@@ -50,7 +50,7 @@ def handle_events():
 def update():
     for game_object in game_world.all_objects():
         game_object.update()
-        delay(0.01)
+    delay(0.01)
 
 
 def draw():
