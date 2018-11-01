@@ -2,8 +2,10 @@ from pico2d import*
 import game_framework
 import game_world
 from fire_basic_attack import Fire_basic_attack
-from water_basic_attack import Water_basic_attack
 from fire_w import Fire_w
+from fire_r import Fire_r
+from water_basic_attack import Water_basic_attack
+
 PIXEL_PER_METER = (10.0/0.3)
 RUN_SPEED_KMPH = 30.0
 RUN_SPEED_MPM = (RUN_SPEED_KMPH*1000.0/60.0)
@@ -67,6 +69,8 @@ class Fire_Wisp:
 
         elif event == w:
             wisp.fire_w()
+        elif event == r:
+            wisp.fire_r()
 
     @staticmethod
     def do(wisp):
@@ -157,7 +161,7 @@ class Leaf_Wisp:
 
 next_state_table = {
     Water_Wisp: {RIGHT_DOWN: Water_Wisp, LEFT_DOWN: Water_Wisp, UP_UP: Water_Wisp, UP_DOWN: Water_Wisp, DOWN_UP:Water_Wisp,DOWN_DOWN:Water_Wisp,RIGHT_UP:Water_Wisp,LEFT_UP:Water_Wisp,f:Fire_Wisp,SPACE:Water_Wisp},
-    Fire_Wisp: {RIGHT_DOWN: Fire_Wisp, LEFT_DOWN: Fire_Wisp, UP_UP: Fire_Wisp, UP_DOWN: Fire_Wisp,DOWN_UP:Fire_Wisp,DOWN_DOWN:Fire_Wisp,RIGHT_UP:Fire_Wisp,LEFT_UP:Fire_Wisp,f:Water_Wisp,SPACE:Fire_Wisp,w:Fire_Wisp}
+    Fire_Wisp: {RIGHT_DOWN: Fire_Wisp, LEFT_DOWN: Fire_Wisp, UP_UP: Fire_Wisp, UP_DOWN: Fire_Wisp,DOWN_UP:Fire_Wisp,DOWN_DOWN:Fire_Wisp,RIGHT_UP:Fire_Wisp,LEFT_UP:Fire_Wisp,f:Water_Wisp,SPACE:Fire_Wisp,w:Fire_Wisp,r:Fire_Wisp}
 }
 #next_state_table = {
 #        Fire_Wisp: {d:Leaf_Wisp,f:Water_Wisp},
@@ -178,13 +182,16 @@ class Wisp:
         self.Yvelocity=0
 
     def fire_basic_attack(self):
-        fire = Fire_basic_attack(self.x+30+30, self.y-30, 1)
+        fire = Fire_basic_attack(self.x+30+70, self.y-30, 1)
         game_world.add_object(fire, 1)
     def fire_w(self):
-        fire_w = Fire_w(self.x+30+30, self.y-30, 1)
+        fire_w = Fire_w(self.x+30, self.y-30, 1)
         game_world.add_object(fire_w, 1)
+    def fire_r(self):
+        fire_r=Fire_r(0,400)
+        game_world.add_object(fire_r,1)
     def water_basic_attack(self):
-        water=Water_basic_attack(self.x+30+30, self.y-30, 1)
+        water=Water_basic_attack(self.x+30+170, self.y-30, 1)
         game_world.add_object(water, 1)
 
 
