@@ -7,6 +7,7 @@ from fire_e import Fire_e
 from fire_r import Fire_r
 from water_basic_attack import Water_basic_attack
 from water_r import Water_r
+from leaf_basic_attack import Leaf_basic_attack
 from leaf_e import Leaf_e
 from leaf_w import Leaf_w
 
@@ -171,7 +172,7 @@ class Leaf_Wisp:
     @staticmethod
     def exit(wisp, event):
         if event == SPACE:
-            wisp.fire_basic_attack()
+            wisp.leaf_basic_attack()
         elif event==e:
             if(wisp.leaf_e_timer>=15):
                 wisp.leaf_e()
@@ -247,6 +248,9 @@ class Wisp:
     def water_r(self):
         water_r=Water_r(self.x+700,self.y-30)
         game_world.add_object(water_r,1)
+    def leaf_basic_attack(self):
+        leaf=Leaf_basic_attack(self.x+30+100, self.y-30-30, 1)
+        game_world.add_object(leaf, 1)
     def leaf_w(self):
         leaf_w=Leaf_w(self.x+40,self.y-60)
         game_world.add_object(leaf_w, 1)
