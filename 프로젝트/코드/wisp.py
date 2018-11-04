@@ -3,10 +3,13 @@ import game_framework
 import game_world
 from fire_basic_attack import Fire_basic_attack
 from fire_w import Fire_w
+from fire_e import Fire_e
 from fire_r import Fire_r
 from water_basic_attack import Water_basic_attack
+from water_r import Water_r
 from leaf_e import Leaf_e
 from leaf_w import Leaf_w
+
 from tiena import  Tiena
 
 PIXEL_PER_METER = (10.0/0.3)
@@ -70,13 +73,22 @@ class Fire_Wisp:
 
     @staticmethod
     def exit(wisp, event):
-        if event == SPACE:
-            wisp.fire_basic_attack()
+        if event==SPACE:
+            if (wisp.fire_e_using_time <= 0):
+                wisp.fire_basic_attack()
+            else:
+                wisp. fire_e()
 
         elif event == w:
             if(wisp.fire_w_timer>=10):
                 wisp.fire_w()
                 wisp.fire_w_timer=0
+
+        elif event == e:
+            if(wisp.fire_e_cool_timer>=10):
+                wisp.fire_e_using_time=5
+                wisp.fire_e_cool_timer=0
+
 
         elif event == r:
             if(wisp.fire_r_timer>=40):
@@ -121,6 +133,10 @@ class Water_Wisp:
     def exit(wisp, event):
         if event==SPACE:
             wisp.water_basic_attack()
+        elif event == r:
+            if(wisp.water_r_timer>=40):
+                wisp.water_r()
+                wisp.water_timer=0
 
     @staticmethod
     def do(wisp):
@@ -157,9 +173,13 @@ class Leaf_Wisp:
         if event == SPACE:
             wisp.fire_basic_attack()
         elif event==e:
-            wisp.leaf_e()
+            if(wisp.leaf_e_timer>=15):
+                wisp.leaf_e()
+                wisp.leaf_e_timer=0
         elif event==w:
-            wisp.leaf_w()
+            if(wisp.leaf_w_timer>=20):
+                wisp.leaf_w()
+                wisp.leaf_w_timer=0
 
     @staticmethod
     def do(wisp):
@@ -178,8 +198,8 @@ class Leaf_Wisp:
 
 next_state_table = {
 
-    Fire_Wisp: {RIGHT_DOWN: Fire_Wisp, LEFT_DOWN: Fire_Wisp, UP_UP: Fire_Wisp, UP_DOWN: Fire_Wisp,DOWN_UP:Fire_Wisp,DOWN_DOWN:Fire_Wisp,RIGHT_UP:Fire_Wisp,LEFT_UP:Fire_Wisp,d:Leaf_Wisp,f:Water_Wisp,SPACE:Fire_Wisp,w:Fire_Wisp,r:Fire_Wisp},
-    Water_Wisp: {RIGHT_DOWN: Water_Wisp, LEFT_DOWN: Water_Wisp, UP_UP: Water_Wisp, UP_DOWN: Water_Wisp, DOWN_UP:Water_Wisp,DOWN_DOWN:Water_Wisp,RIGHT_UP:Water_Wisp,LEFT_UP:Water_Wisp,d:Fire_Wisp,f:Leaf_Wisp,SPACE:Water_Wisp},
+    Fire_Wisp: {RIGHT_DOWN: Fire_Wisp, LEFT_DOWN: Fire_Wisp, UP_UP: Fire_Wisp, UP_DOWN: Fire_Wisp,DOWN_UP:Fire_Wisp,DOWN_DOWN:Fire_Wisp,RIGHT_UP:Fire_Wisp,LEFT_UP:Fire_Wisp,d:Leaf_Wisp,f:Water_Wisp,SPACE:Fire_Wisp,e:Fire_Wisp,w:Fire_Wisp,r:Fire_Wisp},
+    Water_Wisp: {RIGHT_DOWN: Water_Wisp, LEFT_DOWN: Water_Wisp, UP_UP: Water_Wisp, UP_DOWN: Water_Wisp, DOWN_UP:Water_Wisp,DOWN_DOWN:Water_Wisp,RIGHT_UP:Water_Wisp,LEFT_UP:Water_Wisp,d:Fire_Wisp,f:Leaf_Wisp,SPACE:Water_Wisp,r:Water_Wisp},
     Leaf_Wisp: {RIGHT_DOWN: Leaf_Wisp, LEFT_DOWN:Leaf_Wisp, UP_UP: Leaf_Wisp, UP_DOWN: Leaf_Wisp, DOWN_UP:Leaf_Wisp,DOWN_DOWN:Leaf_Wisp,RIGHT_UP:Leaf_Wisp,LEFT_UP:Leaf_Wisp,d:Water_Wisp,f:Fire_Wisp,SPACE:Leaf_Wisp,w:Leaf_Wisp,e:Leaf_Wisp},
 }
 
@@ -197,11 +217,24 @@ class Wisp:
         self.Yvelocity=0
         self.i=1
         self.cnt=0
+
         self.fire_w_timer=10
-        self.fire_r_timer=40
+        self.fire_e_using_time=0
+        self.fire_e_cool_timer=10
+        self.fire_r_timer = 40
+
+        self.water_r_timer=40
+
+        self.leaf_w_timer=20
+        self.leaf_e_timer=15
     def fire_basic_attack(self):
-        fire = Fire_basic_attack(self.x+30+70, self.y-30, 1)
+        fire = Fire_basic_attack(self.x+30+100, self.y-30-30, 1)
         game_world.add_object(fire, 1)
+
+    def fire_e(self):
+        fire_e = Fire_e(self.x+130, self.y-60, 1)
+        game_world.add_object(fire_e, 1)
+
     def fire_w(self):
         fire_w = Fire_w(self.x+30, self.y-30, 1)
         game_world.add_object(fire_w, 1)
@@ -209,14 +242,17 @@ class Wisp:
         fire_r=Fire_r(0,400)
         game_world.add_object(fire_r,1)
     def water_basic_attack(self):
-        water=Water_basic_attack(self.x+30+170, self.y-30, 1)
+        water=Water_basic_attack(self.x+30+100, self.y-30-30, 1)
         game_world.add_object(water, 1)
+    def water_r(self):
+        water_r=Water_r(self.x+700,self.y-30)
+        game_world.add_object(water_r,1)
     def leaf_w(self):
         leaf_w=Leaf_w(self.x+40,self.y-60)
         game_world.add_object(leaf_w, 1)
 
     def leaf_e(self):
-        leaf_e=Leaf_e(self.x+30,self.y-30)
+        leaf_e=Leaf_e(self.x+250,self.y-40)
         game_world.add_object(leaf_e, 1)
 
 
@@ -232,6 +268,11 @@ class Wisp:
             self.cur_state.enter(self, event)
         self.fire_w_timer+=game_framework.frame_time
         self.fire_r_timer+=game_framework.frame_time
+        self.fire_e_using_time-=game_framework.frame_time
+        self.fire_e_cool_timer += game_framework.frame_time
+        self.fire_r_timer+=game_framework.frame_time
+        self.leaf_w_timer+=game_framework.frame_time
+        self.leaf_e_timer+=game_framework.frame_time
 
     def draw(self):
         self.cur_state.draw(self)

@@ -5,7 +5,7 @@ import game_world
 from background import Background
 from wisp import Wisp
 from tiena import Tiena
-
+from tiena_state_ui import Tiena_State_Ui
 
 name = "MainState"
 
@@ -16,12 +16,16 @@ def enter():
     global wisp
     global tiena
     global background
+    global tiena_state_ui
     background = Background()
     wisp = Wisp()
     tiena = Tiena()
+    tiena_state_ui=Tiena_State_Ui()
     game_world.add_object(background,0)
     game_world.add_object(wisp, 1)
     game_world.add_object(tiena, 1)
+    game_world.add_object(tiena_state_ui, 1)
+
 
 
 def exit():
@@ -45,7 +49,6 @@ def handle_events():
         else:
             tiena.handle_event(event)
             wisp.handle_event(event)
-
 
 
 def update():
