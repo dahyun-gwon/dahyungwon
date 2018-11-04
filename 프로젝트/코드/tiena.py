@@ -4,6 +4,7 @@ import game_world
 
 
 
+
 PIXEL_PER_METER = (10.0/0.3)
 i=1
 RUN_SPEED_KMPH = 30.0
@@ -99,6 +100,7 @@ class GoState:
             tiena.Yvelocity-=RUN_SPEED_PPS
 
 
+
     @staticmethod
     def exit(tiena, event):
         pass
@@ -138,7 +140,6 @@ class Tiena:
         self.event_que = []
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
-
 
 
 

@@ -92,6 +92,7 @@ def run(start_state):
     stack = [start_state]
     start_state.enter()
     global frame_time
+    global current_time
     current_time=time.time()
     while (running):
         stack[-1].handle_events()

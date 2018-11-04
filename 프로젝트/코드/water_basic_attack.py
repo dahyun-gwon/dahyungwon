@@ -16,7 +16,7 @@ class Water_basic_attack:
 
     def update(self):
         self.x += self.Xvelocity*3
-        self.up_y+=2
+        self.up_y+=1
         self.down_y-=1
 
         if self.x < 25 or self.x > 1600 - 25:

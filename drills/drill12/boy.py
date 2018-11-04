@@ -142,6 +142,7 @@ class SleepState:
             boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2, '', boy.x - 25, boy.y - 25, 100, 100)
             if(boy.i<3.141592 / 2):
                 boy.image.opacify(boy.opacity)
+
                 boy.image.clip_composite_draw(int(boy.frame) * 100, 300, 100, 100, 3.141592 / 2-boy.i, '', boy.x - 25+boy.j,boy.y - 25 +boy.j, 100, 100)
 
             elif(boy.i>=3.141592/2):
@@ -204,7 +205,7 @@ class Boy:
 
     def draw(self):
         self.cur_state.draw(self)
-        self.font.draw(self.x - 60, self.y + 50, '(Time: %3.2f)' %get_time(), (255, 255, 0))
+        self.font.draw(self.x - 60, self.y + 50, '(Time: %3.2f)' %game_framework.frame_time, (255, 255, 0))
 
     def handle_event(self, event):
         if (event.type, event.key) in key_event_table:
