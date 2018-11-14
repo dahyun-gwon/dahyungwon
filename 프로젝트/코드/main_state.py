@@ -6,7 +6,7 @@ from background import Background
 from wisp import Wisp
 from tiena import Tiena
 from tiena_state_ui import Tiena_State_Ui
-from fire_monster import Fire_Monster
+from enemy import Fire_Monster
 
 name = "MainState"
 
@@ -34,13 +34,13 @@ def enter():
     background = Background()
     wisp = Wisp()
     tiena = Tiena()
-    fire_monsters = [Fire_Monster() for i in range(10)]
     tiena_state_ui=Tiena_State_Ui()
+    fire_monster1 = [Fire_Monster(i, j) for (i, j) in [(1200, 500), (1250, 500), (1300, 500),(1350,500)]]
+    game_world.add_objects(fire_monster1,1)
     game_world.add_object(background,0)
     game_world.add_object(wisp, 1)
     game_world.add_object(tiena, 1)
     game_world.add_object(tiena_state_ui, 1)
-    game_world.add_objects(fire_monsters,1)
 
 
 
@@ -72,10 +72,7 @@ def update():
     for game_object in game_world.all_objects():
         game_object.update()
 
-    for fire_monster in fire_monsters:
-        if collide(tiena,fire_monster):
-            fire_monsters.remove(fire_monster)
-            print("collision")
+
     delay(0.01)
 
 

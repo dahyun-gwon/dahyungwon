@@ -1,19 +1,27 @@
 from pico2d import *
-import game_world
-import  random
 import game_framework
-from pico2d import *
 import game_world
+
+PIXEL_PER_METER = (10.0 /0.3)
+RUN_SPEED_KMPH = 20.0
+RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
+RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
+RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
+
+
+TIME_PER_ACTION = 0.5
+ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
+FRAMES_PER_ACTION = 8
 
 
 class Fire_Monster:
     image = None
 
-    def __init__(self):
+    def __init__(self,x,y):
         if Fire_Monster.image == None:
             Fire_Monster.image = load_image('bomp.png')
-        self.x=1400
-        self.y=random.randint(0,800)
+        self.x=x
+        self.y=y
 
     def draw(self):
         self.image.draw(self.x,self.y)
@@ -25,3 +33,5 @@ class Fire_Monster:
 
     def XYreturn(self):
         return self.x-15,self.y-25,self.x+15,self.y+25
+
+
