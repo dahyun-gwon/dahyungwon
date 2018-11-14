@@ -160,7 +160,8 @@ class Tiena:
             key_event = key_event_table[(event.type, event.key)]
             self.add_event(key_event)
 
-    def Xreturn(self):
-        return self.x
-    def Yreturn(self):
-        return self.y
+    def XYreturn(self):
+        return self.x-50,self.y-50,self.x+50,self.y+50
+
+    def XY(self):
+        return self.x,self.y

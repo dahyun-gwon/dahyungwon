@@ -1,6 +1,7 @@
 from pico2d import *
 import game_world
 import game_framework
+from tiena import Tiena
 class Leaf_w:
     image = None
 
