@@ -1,7 +1,8 @@
 from pico2d import *
 import game_world
 import game_framework
-from tiena import Tiena
+
+
 class Leaf_w:
     image = None
 
@@ -18,6 +19,7 @@ class Leaf_w:
 
 
     def update(self):
+        self.x,self.y
         self.time-=game_framework.frame_time
         if self.time<=0:
             game_world.remove_object(self)

@@ -17,3 +17,5 @@ class Fire_basic_attack:
 
         if self.x < 25 or self.x > 1600 - 25:
             game_world.remove_object(self)
+    def XYreturn(self):
+        return self.x-50,self.y-50,self.x+50,self.y+50

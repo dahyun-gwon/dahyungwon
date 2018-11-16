@@ -27,7 +27,7 @@ class Fire_Monster:
         self.image.draw(self.x,self.y)
 
     def update(self):
-        self.x -= 8
+        self.x -= 5
         if self.x < -500 or self.x > 2500:
             game_world.remove_object(self)
 
