@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7006d130-a3c2-4f6a-b82c-8a07236dd855" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/drill13/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/ENCR10B.TTF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/animation_sheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/background.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/boy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/futsal_court.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/game_framework.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/game_world.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/main_state.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drill13/mygame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drill07/drill07.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill07/drill07.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/leaf_w.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/leaf_w.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/main_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/mygame.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/mygame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/tiena.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/tiena.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/water_r.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/water_r.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/wisp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/wisp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

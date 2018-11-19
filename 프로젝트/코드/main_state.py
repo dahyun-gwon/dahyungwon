@@ -2,8 +2,9 @@ from pico2d import *
 import game_framework
 import game_world
 from background import Background
-from wisp import *
+from wisp import Wisp
 from tiena import Tiena
+import wisp
 from tiena_state_ui import Tiena_State_Ui
 from enemy import Fire_Monster
 import title_state
@@ -31,22 +32,26 @@ def collide(a,b):
 
     return True
 def enter():
-    global wisp
+    global wispp
     global tienaa
     global background
     global tiena_state_ui
     global time
     global fire_monsters1
+    global fire_monsters2
     tienaa=Tiena()
     fire_monsters1 = [Fire_Monster(i, j) for (i, j) in [(1200, 500), (1250, 500), (1300, 500), (1350, 500)]]
+    fire_monsters2 = [Fire_Monster(i, j) for (i, j) in [(1200, 200), (1250, 200), (1300, 200), (1350, 200)]]
     time=State_time()
     background = Background()
-    wisp = Wisp()
+    wispp = Wisp()
     tiena_state_ui=Tiena_State_Ui()
     game_world.add_object(background,0)
-    game_world.add_object(wisp, 1)
+    game_world.add_object(wispp, 1)
     game_world.add_object(tiena_state_ui, 2)
     game_world.add_object(tienaa, 1)
+
+
 
 
 
@@ -56,15 +61,14 @@ def exit():
     game_world.clear()
 
 def pause():
-    global tienaa
+    pass
 
 
 def resume():
-    global tienaa
+    pass
 
 
 def handle_events():
-    global tienaa
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -77,11 +81,10 @@ def handle_events():
             game_framework.push_state(pause_state)
         else:
             tienaa.handle_event(event)
-            wisp.handle_event(event)
+            wispp.handle_event(event)
 
 
 def update():
-    global tienaa
     time.update()
     for game_object in game_world.all_objects():
         game_object.update()
@@ -90,10 +93,11 @@ def update():
             fire_monsters1.remove(fire_monster)
             game_world.remove_object(fire_monster)
             tienaa.HP-=50
-
-
-
-
+        elif wisp.fire_attack!=None:
+            if collide(wisp.fire_attack,fire_monster):
+                fire_monsters1.remove(fire_monster)
+                game_world.remove_object(fire_monster)
+                game_world.remove_object(wisp.fire_attack)
 
 
 
@@ -103,10 +107,8 @@ def update():
 
     if(time.time==300):
         game_world.add_objects(fire_monsters1,1)
-
-    if(time.time==420):
-        game_world.add_objects(fire_monsters1,1)
-
+    elif(time.time==480):
+        game_world.add_objects(fire_monsters2,1)
 
 
     delay(0.01)
