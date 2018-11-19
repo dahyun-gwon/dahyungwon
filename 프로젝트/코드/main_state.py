@@ -3,16 +3,17 @@ from pico2d import *
 import game_framework
 import game_world
 from background import Background
-from wisp import Wisp
+from wisp import *
 from tiena import Tiena
 from tiena_state_ui import Tiena_State_Ui
 from enemy import Fire_Monster
+import title_state
+import pause_state
 from fire_basic_attack import Fire_basic_attack
 
 name = "MainState"
 
 fire_monster=None
-wisp=None
 tiena = None
 fire_monsters=[]
 class State_time:
@@ -38,13 +39,11 @@ def enter():
     global tiena_state_ui
     global time
     global fire_monsters1
-    global fire_basic_attack
     fire_monsters1 = [Fire_Monster(i, j) for (i, j) in [(1200, 500), (1250, 500), (1300, 500), (1350, 500)]]
     time=State_time()
     background = Background()
     wisp = Wisp()
     tiena = Tiena()
-    fire_basic_attack=Fire_basic_attack(0,0)
     tiena_state_ui=Tiena_State_Ui()
     game_world.add_object(background,0)
     game_world.add_object(wisp, 1)
@@ -73,6 +72,10 @@ def handle_events():
             game_framework.quit()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.quit()
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+            game_framework.change_state(title_state)
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
+            game_framework.push_state(pause_state)
         else:
             tiena.handle_event(event)
             wisp.handle_event(event)
@@ -87,14 +90,18 @@ def update():
             fire_monsters1.remove(fire_monster)
             game_world.remove_object(fire_monster)
             tiena.HP-=50
-        if collide(fire_monster,wisp.fire):
-            fire_monsters1.remove(fire_monster)
-            game_world.remove_object(fire_monster)
+
+
+
 
 
     if(tiena.HP<1):
         game_world.remove_object(tiena)
+
     if(time.time==300):
+        game_world.add_objects(fire_monsters1,1)
+
+    if(time.time==420):
         game_world.add_objects(fire_monsters1,1)
 
 

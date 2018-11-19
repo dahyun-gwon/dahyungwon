@@ -11,7 +11,7 @@ from leaf_basic_attack import Leaf_basic_attack
 from leaf_e import Leaf_e
 from leaf_w import Leaf_w
 
-fire=None
+fire_attack=None
 from tiena import  Tiena
 
 PIXEL_PER_METER = (10.0/0.3)
@@ -230,9 +230,9 @@ class Wisp:
         self.leaf_w_timer=20
         self.leaf_e_timer=15
     def fire_basic_attack(self):
-        global fire
-        fire = Fire_basic_attack(self.x+30+100, self.y-30-30, 1)
-        game_world.add_object(fire, 1)
+        global fire_attack
+        fire_attack = Fire_basic_attack(self.x+30+100, self.y-30-30, 1)
+        game_world.add_object(fire_attack, 1)
 
     def fire_e(self):
         fire_e = Fire_e(self.x+130, self.y-60, 1)
@@ -288,5 +288,4 @@ class Wisp:
         if (event.type, event.key) in key_event_table:
             key_event = key_event_table[(event.type, event.key)]
             self.add_event(key_event)
-
 

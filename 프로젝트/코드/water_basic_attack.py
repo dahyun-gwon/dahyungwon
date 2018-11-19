@@ -15,7 +15,7 @@ class Water_basic_attack:
         self.image.draw(self.x, self.down_y)
 
     def update(self):
-        self.x += self.Xvelocity*3
+        self.x += self.Xvelocity*5
         self.up_y+=1
         self.down_y-=1
 
