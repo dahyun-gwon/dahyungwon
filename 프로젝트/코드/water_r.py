@@ -1,6 +1,7 @@
 from pico2d import *
 import game_world
 import game_framework
+import main_state
 
 class Water_r:
     image = None
@@ -16,5 +17,7 @@ class Water_r:
 
     def update(self):
         self.time-=game_framework.frame_time
+        self.x=main_state.tienaa.X()+650
+        self.y=main_state.tienaa.Y()
         if self.time<=0:
             game_world.remove_object(self)

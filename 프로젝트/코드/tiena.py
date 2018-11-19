@@ -165,3 +165,7 @@ class Tiena:
 
     def XY(self):
         return self.x,self.y
+    def X(self):
+        return self.x
+    def Y(self):
+        return self.y

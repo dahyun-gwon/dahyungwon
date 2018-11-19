@@ -10,7 +10,6 @@ from water_r import Water_r
 from leaf_basic_attack import Leaf_basic_attack
 from leaf_e import Leaf_e
 from leaf_w import Leaf_w
-
 fire_attack=None
 from tiena import  Tiena
 
@@ -279,6 +278,8 @@ class Wisp:
         self.fire_r_timer+=game_framework.frame_time
         self.leaf_w_timer+=game_framework.frame_time
         self.leaf_e_timer+=game_framework.frame_time
+
+
 
     def draw(self):
         self.cur_state.draw(self)

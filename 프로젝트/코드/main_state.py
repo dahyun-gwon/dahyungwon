@@ -1,4 +1,3 @@
-
 from pico2d import *
 import game_framework
 import game_world
@@ -9,13 +8,12 @@ from tiena_state_ui import Tiena_State_Ui
 from enemy import Fire_Monster
 import title_state
 import pause_state
-from fire_basic_attack import Fire_basic_attack
 
-name = "MainState"
 
 fire_monster=None
-tiena = None
 fire_monsters=[]
+
+tienaa=None
 class State_time:
     def __init__(self):
         self.time=60
@@ -34,38 +32,39 @@ def collide(a,b):
     return True
 def enter():
     global wisp
-    global tiena
+    global tienaa
     global background
     global tiena_state_ui
     global time
     global fire_monsters1
+    tienaa=Tiena()
     fire_monsters1 = [Fire_Monster(i, j) for (i, j) in [(1200, 500), (1250, 500), (1300, 500), (1350, 500)]]
     time=State_time()
     background = Background()
     wisp = Wisp()
-    tiena = Tiena()
     tiena_state_ui=Tiena_State_Ui()
     game_world.add_object(background,0)
     game_world.add_object(wisp, 1)
-    game_world.add_object(tiena, 1)
-    game_world.add_object(tiena_state_ui, 1)
-
+    game_world.add_object(tiena_state_ui, 2)
+    game_world.add_object(tienaa, 1)
 
 
 
 
 def exit():
+    global tienaa
     game_world.clear()
 
 def pause():
-    pass
+    global tienaa
 
 
 def resume():
-    pass
+    global tienaa
 
 
 def handle_events():
+    global tienaa
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -77,26 +76,30 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
             game_framework.push_state(pause_state)
         else:
-            tiena.handle_event(event)
+            tienaa.handle_event(event)
             wisp.handle_event(event)
 
 
 def update():
+    global tienaa
     time.update()
     for game_object in game_world.all_objects():
         game_object.update()
     for fire_monster in fire_monsters1:
-        if collide(tiena,fire_monster):
+        if collide(tienaa,fire_monster):
             fire_monsters1.remove(fire_monster)
             game_world.remove_object(fire_monster)
-            tiena.HP-=50
+            tienaa.HP-=50
 
 
 
 
 
-    if(tiena.HP<1):
-        game_world.remove_object(tiena)
+
+
+
+    if(tienaa.HP<1):
+        game_world.remove_object(tienaa)
 
     if(time.time==300):
         game_world.add_objects(fire_monsters1,1)
