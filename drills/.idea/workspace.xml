@@ -4,6 +4,7 @@
     <list default="true" id="7006d130-a3c2-4f6a-b82c-8a07236dd855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/game_world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/game_world.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/main_state.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -193,8 +194,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="487" />
-    <option name="y" value="8" />
+    <option name="x" value="193" />
+    <option name="y" value="41" />
     <option name="width" value="1099" />
     <option name="height" value="753" />
   </component>

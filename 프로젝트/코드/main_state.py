@@ -12,7 +12,7 @@ import pause_state
 
 
 fire_monster=None
-fire_monsters=[]
+fire_monsters1=[]
 
 tienaa=None
 class State_time:
@@ -48,7 +48,7 @@ def enter():
     tiena_state_ui=Tiena_State_Ui()
     game_world.add_object(background,0)
     game_world.add_object(wispp, 1)
-    game_world.add_object(tiena_state_ui, 2)
+    game_world.add_object(tiena_state_ui, 1)
     game_world.add_object(tienaa, 1)
 
 
@@ -57,7 +57,6 @@ def enter():
 
 
 def exit():
-    global tienaa
     game_world.clear()
 
 def pause():
@@ -86,29 +85,31 @@ def handle_events():
 
 def update():
     time.update()
+    if(time.time==300):
+        game_world.add_objects(fire_monsters1,1)
+    elif(time.time==480):
+        game_world.add_objects(fire_monsters2,1)
+
+
     for game_object in game_world.all_objects():
         game_object.update()
+
     for fire_monster in fire_monsters1:
         if collide(tienaa,fire_monster):
             fire_monsters1.remove(fire_monster)
             game_world.remove_object(fire_monster)
             tienaa.HP-=50
+            break
+
         elif wisp.fire_attack!=None:
             if collide(wisp.fire_attack,fire_monster):
                 fire_monsters1.remove(fire_monster)
                 game_world.remove_object(fire_monster)
                 game_world.remove_object(wisp.fire_attack)
 
-
-
-
-    if(tienaa.HP<1):
+    if (tienaa.HP < 1):
         game_world.remove_object(tienaa)
-
-    if(time.time==300):
-        game_world.add_objects(fire_monsters1,1)
-    elif(time.time==480):
-        game_world.add_objects(fire_monsters2,1)
+        game_world.remove_object(wispp)
 
 
     delay(0.01)
