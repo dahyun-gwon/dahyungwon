@@ -50,6 +50,7 @@ def enter():
     game_world.add_object(wispp, 1)
     game_world.add_object(tiena_state_ui, 1)
     game_world.add_object(tienaa, 1)
+    fire_monster=Fire_Monster(0,0)
 
 
 
@@ -94,12 +95,20 @@ def update():
 
     for game_object in game_world.all_objects():
         game_object.update()
-        if (not game_object.state): game_world.remove_object(game_object)
 
-        for fire_monster in fire_monsters1:
-            if collide(tienaa,fire_monster):
-                tienaa.HP-=fire_monster.damage
-                fire_monster.HP-=tienaa.HP
+
+        if not game_object.state:
+            game_world.remove_object(game_object)
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2,6 +2,7 @@ import game_framework
 from pico2d import *
 import game_world
 import main_state
+import enemy
 
 
 
@@ -155,7 +156,15 @@ class Tiena:
             self.cur_state.exit(self, event)
             self.cur_state = next_state_table[self.cur_state][event]
             self.cur_state.enter(self, event)
-        if(self.HP<1):self.state=False;
+
+
+
+
+
+        if(self.HP<1):
+            self.state=False
+
+
 
 
 

@@ -9,6 +9,7 @@ class Fire_basic_attack:
             Fire_basic_attack.image = load_image('basic.png')
         self.x, self.y, self.Xvelocity = x, y, Xvelocity
         self.state = True;
+        self.damage=50
 
     def draw(self):
         self.image.draw(self.x, self.y)

@@ -1,6 +1,8 @@
 from pico2d import *
 import game_framework
 import game_world
+import main_state
+import wisp
 
 PIXEL_PER_METER = (10.0 /0.3)
 RUN_SPEED_KMPH = 20.0
@@ -24,7 +26,7 @@ class Fire_Monster:
         self.y=y
         self.state = True;
         self.HP = 20
-        self.damage=20
+        self.damage=50
 
     def draw(self):
         self.image.draw(self.x,self.y)
@@ -33,11 +35,27 @@ class Fire_Monster:
         self.x -= 5
         if self.x < -500 or self.x > 2500:
             game_world.remove_object(self)
-        if self.HP<1:self.state=False
+
+        if main_state.collide(self,main_state.tienaa):
+            self.HP-=main_state.tienaa.damage
+            main_state.tienaa.HP-=self.damage
+
+        elif (wisp.fire_attack):
+            if main_state.collide(self,wisp.fire_attack):
+                self.HP-=wisp.fire_attack.damage
+                wisp.fire_attack.x,wisp.fire_attack.y=0,0
+                print(wisp.fire_attack.x,wisp.fire_attack)
+
+
+        if self.HP < 1:
+            self.state = False
+            self.x,self.y=0,0
+            game_world.remove_object(self)
+
+
 
     def XYreturn(self):
         return self.x-15,self.y-25,self.x+15,self.y+25
-    def killed(self):
-        game_world.remove_object(self)
+
 
 

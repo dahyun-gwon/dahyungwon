@@ -11,6 +11,7 @@ from leaf_basic_attack import Leaf_basic_attack
 from leaf_e import Leaf_e
 from leaf_w import Leaf_w
 fire_attack=None
+import main_state
 from tiena import  Tiena
 
 PIXEL_PER_METER = (10.0/0.3)
@@ -279,6 +280,8 @@ class Wisp:
         self.fire_r_timer+=game_framework.frame_time
         self.leaf_w_timer+=game_framework.frame_time
         self.leaf_e_timer+=game_framework.frame_time
+        if (main_state.tienaa.state==False):
+            self.state=False
 
 
 
