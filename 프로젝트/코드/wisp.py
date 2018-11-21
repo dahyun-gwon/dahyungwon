@@ -11,6 +11,7 @@ from leaf_basic_attack import Leaf_basic_attack
 from leaf_e import Leaf_e
 from leaf_w import Leaf_w
 fire_attack=None
+fire_w_attack=None
 import main_state
 from tiena import  Tiena
 
@@ -230,18 +231,25 @@ class Wisp:
 
         self.leaf_w_timer=20
         self.leaf_e_timer=15
+
     def fire_basic_attack(self):
         global fire_attack
         fire_attack = Fire_basic_attack(self.x+30+100, self.y-30-30, 1)
         game_world.add_object(fire_attack, 1)
 
+    def fire_w(self):
+        global fire_w_attack
+        fire_w_attack = Fire_w(self.x+30, self.y-30, 1)
+        game_world.add_object(fire_w_attack, 1)
+
+
     def fire_e(self):
         fire_e = Fire_e(self.x+130, self.y-60, 1)
         game_world.add_object(fire_e, 1)
 
-    def fire_w(self):
-        fire_w = Fire_w(self.x+30, self.y-30, 1)
-        game_world.add_object(fire_w, 1)
+
+
+
     def fire_r(self):
         fire_r=Fire_r(0,400)
         game_world.add_object(fire_r,1)

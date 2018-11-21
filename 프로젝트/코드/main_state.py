@@ -39,6 +39,7 @@ def enter():
     global time
     global fire_monsters1
     global fire_monsters2
+
     tienaa=Tiena()
     fire_monsters1 = [Fire_Monster(i, j) for (i, j) in [(1200, 500), (1250, 500), (1300, 500), (1350, 500)]]
     fire_monsters2 = [Fire_Monster(i, j) for (i, j) in [(1200, 200), (1250, 200), (1300, 200), (1350, 200)]]
@@ -99,20 +100,6 @@ def update():
 
         if not game_object.state:
             game_world.remove_object(game_object)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     delay(0.01)
 

@@ -44,7 +44,10 @@ class Fire_Monster:
             if main_state.collide(self,wisp.fire_attack):
                 self.HP-=wisp.fire_attack.damage
                 wisp.fire_attack.x,wisp.fire_attack.y=0,0
-                print(wisp.fire_attack.x,wisp.fire_attack)
+
+        elif (wisp.fire_w_attack):
+            if main_state.collide(self,wisp.fire_w_attack):
+                self.HP-=wisp.fire_w_attack.damage
 
 
         if self.HP < 1:
