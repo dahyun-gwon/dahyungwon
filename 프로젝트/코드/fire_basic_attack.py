@@ -8,6 +8,7 @@ class Fire_basic_attack:
         if Fire_basic_attack.image == None:
             Fire_basic_attack.image = load_image('basic.png')
         self.x, self.y, self.Xvelocity = x, y, Xvelocity
+        self.state = True;
 
     def draw(self):
         self.image.draw(self.x, self.y)
@@ -19,3 +20,5 @@ class Fire_basic_attack:
             game_world.remove_object(self)
     def XYreturn(self):
         return self.x-50,self.y-50,self.x+50,self.y+50
+    def killed(self):
+        game_world.remove_object(self)

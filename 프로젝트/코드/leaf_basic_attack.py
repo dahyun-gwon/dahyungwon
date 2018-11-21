@@ -8,6 +8,7 @@ class Leaf_basic_attack:
         if Leaf_basic_attack.image == None:
             Leaf_basic_attack.image = load_image('leaf_basic_attack.png')
         self.x, self.y,self.up_y,self.down_y, self.Xvelocity = x, y,y+10,y-10, Xvelocity
+        self.state = True;
 
     def draw(self):
         self.image.draw(self.x, self.y)

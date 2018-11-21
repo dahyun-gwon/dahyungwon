@@ -8,6 +8,7 @@ class Fire_w:
         if Fire_w.image == None:
             Fire_w.image = load_image('fire_w.png')
         self.x, self.y, self.Xvelocity = x, y, Xvelocity
+        self.state = True;
 
     def draw(self):
         self.image.draw(self.x,self.y)

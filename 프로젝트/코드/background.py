@@ -11,6 +11,7 @@ class Background:
         self.light_image=load_image('light.png')
         self.i=0
         self.j=1
+        self.state = True;
 
 
 

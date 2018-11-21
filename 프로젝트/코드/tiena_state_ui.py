@@ -106,6 +106,7 @@ class Tiena_State_Ui:
         self.cur_state.enter(self, None)
         self.x, self.y = 300,600
         self.event_que = []
+        self.state = True;
 
 
 

@@ -11,6 +11,7 @@ class Water_r:
             Water_r.image = load_image('water_r.png')
         self.x, self.y = x, y
         self.time=4
+        self.state=True
 
     def draw(self):
         self.image.clip_draw(0,0,1200,230,self.x,self.y)

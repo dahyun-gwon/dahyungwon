@@ -10,6 +10,7 @@ class Pause:
     def __init__(self):
         self.image = load_image('pause.png')
         self.switch = 0
+        self.state = True;
 
     def draw(self):
         if self.switch == 1:

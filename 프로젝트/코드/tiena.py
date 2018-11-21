@@ -1,7 +1,7 @@
 import game_framework
 from pico2d import *
 import game_world
-
+import main_state
 
 
 
@@ -140,7 +140,10 @@ class Tiena:
         self.event_que = []
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
+        self.damage=100
 
+
+        self.state = True;
 
 
     def add_event(self, event):
@@ -152,6 +155,10 @@ class Tiena:
             self.cur_state.exit(self, event)
             self.cur_state = next_state_table[self.cur_state][event]
             self.cur_state.enter(self, event)
+        if(self.HP<1):self.state=False;
+
+
+
     def draw(self):
         self.cur_state.draw(self)
 
@@ -161,7 +168,7 @@ class Tiena:
             self.add_event(key_event)
 
     def XYreturn(self):
-        return self.x-50,self.y-50,self.x+50,self.y+50
+        return self.x-25,self.y-25,self.x+25,self.y+25
 
     def XY(self):
         return self.x,self.y
@@ -169,3 +176,5 @@ class Tiena:
         return self.x
     def Y(self):
         return self.y
+    def killed(self):
+        game_world.remove_object(self)

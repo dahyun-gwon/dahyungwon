@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7006d130-a3c2-4f6a-b82c-8a07236dd855" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/background.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/background.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/enemy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/fire_basic_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/fire_basic_attack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/fire_e.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/fire_e.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/fire_r.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/fire_r.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/fire_w.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/fire_w.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/game_framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/game_framework.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/leaf_basic_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/leaf_basic_attack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/leaf_e.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/leaf_e.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/leaf_w.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/leaf_w.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/main_state.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/mygame.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/mygame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/stage_background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/stage_background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/stage_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/stage_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/title_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/title_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/pause_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/pause_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/tiena.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/tiena.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/tiena_state_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/tiena_state_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/water_basic_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/water_basic_attack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/water_r.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/water_r.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/wisp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/wisp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

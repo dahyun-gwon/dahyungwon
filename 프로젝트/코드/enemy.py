@@ -22,6 +22,9 @@ class Fire_Monster:
             Fire_Monster.image = load_image('bomp.png')
         self.x=x
         self.y=y
+        self.state = True;
+        self.HP = 20
+        self.damage=20
 
     def draw(self):
         self.image.draw(self.x,self.y)
@@ -30,8 +33,11 @@ class Fire_Monster:
         self.x -= 5
         if self.x < -500 or self.x > 2500:
             game_world.remove_object(self)
+        if self.HP<1:self.state=False
 
     def XYreturn(self):
         return self.x-15,self.y-25,self.x+15,self.y+25
+    def killed(self):
+        game_world.remove_object(self)
 
 

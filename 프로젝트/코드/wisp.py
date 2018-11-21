@@ -218,6 +218,7 @@ class Wisp:
         self.Yvelocity=0
         self.i=1
         self.cnt=0
+        self.state = True;
 
         self.fire_w_timer=10
         self.fire_e_using_time=0

@@ -8,6 +8,7 @@ class Water_basic_attack:
         if Water_basic_attack.image == None:
             Water_basic_attack.image = load_image('water_basic_attack.png')
         self.x, self.y,self.up_y,self.down_y, self.Xvelocity = x, y,y+10,y-10, Xvelocity
+        self.stata=True
 
     def draw(self):
         self.image.draw(self.x, self.y)

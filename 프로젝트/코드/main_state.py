@@ -85,6 +85,7 @@ def handle_events():
 
 def update():
     time.update()
+
     if(time.time==300):
         game_world.add_objects(fire_monsters1,1)
     elif(time.time==480):
@@ -93,23 +94,15 @@ def update():
 
     for game_object in game_world.all_objects():
         game_object.update()
+        if (not game_object.state): game_world.remove_object(game_object)
 
-    for fire_monster in fire_monsters1:
-        if collide(tienaa,fire_monster):
-            fire_monsters1.remove(fire_monster)
-            game_world.remove_object(fire_monster)
-            tienaa.HP-=50
-            break
+        for fire_monster in fire_monsters1:
+            if collide(tienaa,fire_monster):
+                tienaa.HP-=fire_monster.damage
+                fire_monster.HP-=tienaa.HP
 
-        elif wisp.fire_attack!=None:
-            if collide(wisp.fire_attack,fire_monster):
-                fire_monsters1.remove(fire_monster)
-                game_world.remove_object(fire_monster)
-                game_world.remove_object(wisp.fire_attack)
 
-    if (tienaa.HP < 1):
-        game_world.remove_object(tienaa)
-        game_world.remove_object(wispp)
+
 
 
     delay(0.01)
