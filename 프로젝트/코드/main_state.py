@@ -18,8 +18,20 @@ tienaa=None
 class State_time:
     def __init__(self):
         self.time=60
+        self.x,self.y=600,450
+        self.image=load_image('start.png')
+        self.opacity=0.8
     def update(self):
+
+        self.image.opacify(self.opacity)
         self.time+=1
+        if self.y>400:
+            self.y-=0.1
+            self.opacity+=0.02
+        if self.time>120:
+            self.x,self.y=0,1500
+    def draw(self):
+        self.image.draw(self.x,self.y)
 
 def collide(a,b):
     a_left,a_bottom,a_right,a_top=a.XYreturn()
@@ -89,9 +101,9 @@ def update():
     time.update()
 
     if(time.time==300):
-        game_world.add_objects(fire_monsters1,1)
+        game_world.add_objects(fire_monsters1,2)
     elif(time.time==480):
-        game_world.add_objects(fire_monsters2,1)
+        game_world.add_objects(fire_monsters2,2)
 
 
     for game_object in game_world.all_objects():
@@ -108,6 +120,7 @@ def draw():
     clear_canvas()
     for game_object in game_world.all_objects():
         game_object.draw()
+    time.draw()
     update_canvas()
 
 

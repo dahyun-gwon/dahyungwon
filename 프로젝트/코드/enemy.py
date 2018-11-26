@@ -27,13 +27,14 @@ class Fire_Monster:
         self.state = True;
         self.HP = 20
         self.damage=25
+        self.Xvelocity=-5
 
     def draw(self):
         self.image.draw(self.x,self.y)
         draw_rectangle(*self.XYreturn())
 
     def update(self):
-        self.x -= 5
+        self.x +=self.Xvelocity
         if self.x < -500 or self.x > 2500:
             game_world.remove_object(self)
 
@@ -56,7 +57,6 @@ class Fire_Monster:
         elif (wisp.fire_r):
             if main_state.collide(self,wisp.fire_r):
                 self.HP-=wisp.fire_r.damage
-                print("외안대")
 
 
         elif (wisp.water_r):
@@ -93,12 +93,13 @@ class Fire_Monster:
                     game_world.remove_object(wisp.leaf_w)
                     wisp.leaf_w.x,wisp.leaf_w.y=0,0
         elif (wisp.leaf_e):
-            if main_state.collide(self,wisp.leaf_w):
-                self.HP-=wisp.leaf_w.damage
-                wisp.leaf_w.HP-=self.damage
-                if wisp.leaf_w.HP<1:
-                    game_world.remove_object(wisp.leaf_w)
-                    wisp.leaf_w.x,wisp.leaf_w.y=0,0
+            if main_state.collide(self,wisp.leaf_e):
+                for i in range(0, 100, 2):
+                    t = i / 100
+                    self.x = (2 * t ** 2 - 3 * t + 1) * wisp.leaf_e.x+5 + (-4 * t ** 2 + 4 * t) * self.x+5 + (2*t**2-t)*wisp.leaf_e.x
+                    self.y = (2 * t ** 2 - 3 * t + 1) * wisp.leaf_e.y+5 + (-4 * t ** 2 + 4 * t) * self.y-5 + (2*t**2-t)*wisp.leaf_e.y
+                    self.Xvelocity=0
+                    print(self.x,self.y)
 
 
         if self.HP < 1:

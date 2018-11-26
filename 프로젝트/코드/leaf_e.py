@@ -12,7 +12,7 @@ class Leaf_e:
         self.frame=0
         self.cnt=0
         self.time=6
-        self.state = True;
+        self.state = True
 
     def draw(self):
         self.image.clip_draw(self.frame*150,0,150,150,self.x,self.y)

@@ -2,32 +2,56 @@ import game_framework
 from pico2d import *
 import game_world
 
+class Fire_w_ui:
+    image = None
+    def __init__(self):
+        if Fire_w_ui.image == None:
+            Fire_w_ui.image = load_image('fire_w_ui.png')
+        self.x, self.y=100,100
+        self.state = True
+    def draw(self):
+        self.image.draw(self.x,self.y)
+    def update(self):
+        pass
+    def handle_event(self):
+        pass
+
+class Fire_e_ui:
+    image = None
+    def __init__(self):
+        if Fire_e_ui.image == None:
+            Fire_e_ui.image = load_image('fire_e_ui.png')
+        self.x, self.y=110,100
+        self.state = True
+    def draw(self):
+        self.image.draw(self.x,self.y)
+    def update(self):
+        pass
+    def handle_event(self):
+        pass
+
+class Fire_r_ui:
+    image = None
+    def __init__(self):
+        if Fire_r_ui.image == None:
+            Fire_r_ui.image = load_image('fire_r_ui.png')
+        self.x, self.y=120,100
+        self.state = True
+    def draw(self):
+        self.image.draw(self.x,self.y)
+    def update(self):
+        pass
+    def handle_event(self):
+        pass
 
 
-
-PIXEL_PER_METER = (10.0/0.3)
-i=1
-RUN_SPEED_KMPH = 30.0
-RUN_SPEED_MPM = (RUN_SPEED_KMPH*1000.0/60.0)
-RUN_SPEED_MPS = (RUN_SPEED_MPM/60.0)
-RUN_SPEED_PPS = (RUN_SPEED_MPS*PIXEL_PER_METER)
-TIME_PER_ACTION = 0.5
-ACTION_PER_TIME = 1.0/TIME_PER_ACTION
-FRAMES_PER_ACTION = 8
 d,f= range(2)
-
-
-
-key_event_table = {
-    (SDL_KEYDOWN, SDLK_d): d,
-    (SDL_KEYDOWN, SDLK_f): f
-}
+key_event_table = { (SDL_KEYDOWN, SDLK_d): d, (SDL_KEYDOWN, SDLK_f): f }
 
 class Fire_ver_state_ui:
     @staticmethod
     def enter(tiena_state_ui, event):
         pass
-
 
 
     @staticmethod
@@ -99,6 +123,9 @@ next_state_table = {
 
 class Tiena_State_Ui:
     def __init__(self):
+        global fire_w_ui
+        global fire_e_ui
+        global fire_r_ui
         Tiena_State_Ui.fire_ver_state_ui_image=load_image('fire_ui.png')
         Tiena_State_Ui.water_ver_state_ui_image=load_image('water_ui.png')
         Tiena_State_Ui.leaf_ver_state_ui_image=load_image('leaf_ui.png')
@@ -107,6 +134,9 @@ class Tiena_State_Ui:
         self.x, self.y = 300,600
         self.event_que = []
         self.state = True;
+        fire_w_ui=Fire_w_ui()
+        fire_e_ui=Fire_e_ui()
+        fire_r_ui=Fire_r_ui()
 
 
 
