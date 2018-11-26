@@ -13,6 +13,7 @@ class Fire_w:
 
     def draw(self):
         self.image.draw(self.x,self.y)
+        draw_rectangle(*self.XYreturn())
 
     def update(self):
         self.x += self.Xvelocity*12

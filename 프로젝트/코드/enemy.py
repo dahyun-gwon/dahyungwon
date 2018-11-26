@@ -30,6 +30,7 @@ class Fire_Monster:
 
     def draw(self):
         self.image.draw(self.x,self.y)
+        draw_rectangle(*self.XYreturn())
 
     def update(self):
         self.x -= 5
@@ -39,15 +40,37 @@ class Fire_Monster:
         if main_state.collide(self,main_state.tienaa):
             self.HP-=main_state.tienaa.damage
             main_state.tienaa.HP-=self.damage
-
         elif (wisp.fire_attack):
             if main_state.collide(self,wisp.fire_attack):
                 self.HP-=wisp.fire_attack.damage
+                game_world.remove_object(wisp.fire_attack)
                 wisp.fire_attack.x,wisp.fire_attack.y=0,0
+        elif (wisp.fire_w):
+            if main_state.collide(self,wisp.fire_w):
+                self.HP-=wisp.fire_w.damage
+        elif (wisp.fire_e):
+            if main_state.collide(self,wisp.fire_e):
+                self.HP-=wisp.fire_e.damage
+                game_world.remove_object(wisp.fire_e)
+                wisp.fire_e.x,wisp.fire_e.y=0,0
+        elif (wisp.fire_r):
+            if main_state.collide(self,wisp.fire_r):
+                self.HP-=wisp.fire_r.damage
+                print("외안대")
+        elif (wisp.water):
+            if main_state.collide(self,wisp.water):
+                self.HP-=wisp.water.damage
+                game_world.remove_object(wisp.water)
+                wisp.water.x,wisp.water.y=0,0
+        elif (wisp.water_r):
+            if main_state.collide(self,wisp.water_r):
+                self.HP-=wisp.fire_r.damage
+        elif (wisp.leaf):
+            if main_state.collide(self,wisp.leaf):
+                self.HP-=wisp.leaf.damage
+                game_world.remove_object(wisp.leaf)
+                wisp.leaf.x,wisp.leaf.y=0,0
 
-        elif (wisp.fire_w_attack):
-            if main_state.collide(self,wisp.fire_w_attack):
-                self.HP-=wisp.fire_w_attack.damage
 
 
         if self.HP < 1:
@@ -58,7 +81,7 @@ class Fire_Monster:
 
 
     def XYreturn(self):
-        return self.x-15,self.y-25,self.x+15,self.y+25
+        return self.x-10,self.y-25,self.x+10,self.y+25
 
 
 

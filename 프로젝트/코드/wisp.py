@@ -11,7 +11,14 @@ from leaf_basic_attack import Leaf_basic_attack
 from leaf_e import Leaf_e
 from leaf_w import Leaf_w
 fire_attack=None
-fire_w_attack=None
+fire_w=None
+fire_e=None
+fire_r=None
+water=None
+water_r=None
+leaf=None
+leaf_e=None
+leaf_w=None
 import main_state
 from tiena import  Tiena
 
@@ -238,35 +245,38 @@ class Wisp:
         game_world.add_object(fire_attack, 1)
 
     def fire_w(self):
-        global fire_w_attack
-        fire_w_attack = Fire_w(self.x+30, self.y-30, 1)
-        game_world.add_object(fire_w_attack, 1)
-
+        global fire_w
+        fire_w= Fire_w(self.x+30, self.y-30, 1)
+        game_world.add_object(fire_w, 1)
 
     def fire_e(self):
+        global  fire_e
         fire_e = Fire_e(self.x+130, self.y-60, 1)
         game_world.add_object(fire_e, 1)
 
-
-
-
     def fire_r(self):
+        global fire_r
         fire_r=Fire_r(0,400)
         game_world.add_object(fire_r,1)
     def water_basic_attack(self):
+        global water
         water=Water_basic_attack(self.x+30+100, self.y-30-30, 1)
         game_world.add_object(water, 1)
     def water_r(self):
+        global water_r
         water_r=Water_r(self.x+700,self.y-30)
         game_world.add_object(water_r,1)
     def leaf_basic_attack(self):
+        global leaf
         leaf=Leaf_basic_attack(self.x+30+100, self.y-30-30, 1)
         game_world.add_object(leaf, 1)
     def leaf_w(self):
+        global leaf_w
         leaf_w=Leaf_w(self.x+40,self.y-60)
         game_world.add_object(leaf_w, 1)
 
     def leaf_e(self):
+        global leaf_e
         leaf_e=Leaf_e(self.x+250,self.y-40)
         game_world.add_object(leaf_e, 1)
 

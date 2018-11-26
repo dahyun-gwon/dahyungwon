@@ -12,10 +12,12 @@ def enter():
     global cnt
     global mouse_x
     global mouse_y
+    global font
     mouse_x=0
     mouse_y=0
     image = load_image('stage_background.jpg')
     stage_ui=load_image('stage_ui.png')
+    font = load_font('ENCR10B.TTF', 16)
     frame=0
     cnt=0
 
@@ -38,10 +40,12 @@ def handle_events():
         else:
             if (event.type, event.key) == (SDL_KEYDOWN, SDLK_ESCAPE):
                 game_framework.quit()
+            elif event.type == SDL_MOUSEMOTION:
+                mouse_x, mouse_y = event.x, 800 - 1 - event.y
+
 
             elif event.type == SDL_MOUSEBUTTONDOWN:
                 mouse_x, mouse_y = event.x, event.y
-                print("%d %d",mouse_x,mouse_y)
                 if mouse_x>=150 and mouse_x<=250 and mouse_y>=350 and mouse_y<=450:
                     game_framework.change_state(main_state)
 def update():
@@ -55,12 +59,18 @@ def update():
     cnt += 1
     frame =frame % 10
     delay(0.01)
+    print(mouse_x,mouse_y)
+    if (mouse_x, mouse_y > 150, 350 and mouse_x, mouse_y < 250, 450):
+        stage_ui.opacify(1)
+    else:
+        stage_ui.opacify(0.8)
 
 def draw():
     clear_canvas()
-    stage_ui.opacify(0.8)
     image.draw(600, 400)
     stage_ui.clip_draw(100*frame,0,100,100,200,400)
+    font.draw(180, 350, 'STAGE 1', (255, 255, 255))
+
     stage_ui.clip_draw(100 * frame, 0, 100, 100, 400, 400)
     stage_ui.clip_draw(100 * frame, 0, 100, 100, 600, 400)
     stage_ui.clip_draw(100 * frame, 0, 100, 100, 800, 400)

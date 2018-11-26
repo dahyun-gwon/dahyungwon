@@ -8,7 +8,9 @@ class Water_basic_attack:
         if Water_basic_attack.image == None:
             Water_basic_attack.image = load_image('water_basic_attack.png')
         self.x, self.y,self.up_y,self.down_y, self.Xvelocity = x, y,y+10,y-10, Xvelocity
-        self.stata=True
+        self.state=True
+        self.damage=30
+
 
     def draw(self):
         self.image.draw(self.x, self.y)
@@ -24,4 +26,4 @@ class Water_basic_attack:
             game_world.remove_object(self)
 
     def XYreturn(self):
-        return self.x-50,self.y-50,self.x+50,self.y+50
+        return self.x-15,self.y-15,self.x+15,self.y+15

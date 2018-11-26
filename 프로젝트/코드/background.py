@@ -11,7 +11,8 @@ class Background:
         self.light_image=load_image('light.png')
         self.i=0
         self.j=1
-        self.state = True;
+        self.state = True
+        self.light_state=0
 
 
 
@@ -21,8 +22,18 @@ class Background:
     def add_event(self, event):
         pass
     def update(self):
-        if (self.i<1.00):
-            self.i+=0.01
+        if self.light_state==0:
+            if (self.i<1.00):
+                self.i+=0.005
+            else:
+                self.light_state=1
+                self.i=1
+        elif self.light_state==1:
+            if (self.i>0.5):
+                self.i-=0.005
+            else:
+                self.light_state=0
+                self.i=0.5
 
 
 

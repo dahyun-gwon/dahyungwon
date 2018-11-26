@@ -163,6 +163,7 @@ class Tiena:
 
         if(self.HP<1):
             self.state=False
+            self.x,self.y=0,0
 
 
 
