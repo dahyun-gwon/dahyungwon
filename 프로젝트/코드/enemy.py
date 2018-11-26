@@ -26,7 +26,7 @@ class Fire_Monster:
         self.y=y
         self.state = True;
         self.HP = 20
-        self.damage=50
+        self.damage=25
 
     def draw(self):
         self.image.draw(self.x,self.y)
@@ -57,11 +57,8 @@ class Fire_Monster:
             if main_state.collide(self,wisp.fire_r):
                 self.HP-=wisp.fire_r.damage
                 print("외안대")
-        elif (wisp.water):
-            if main_state.collide(self,wisp.water):
-                self.HP-=wisp.water.damage
-                game_world.remove_object(wisp.water)
-                wisp.water.x,wisp.water.y=0,0
+
+
         elif (wisp.water_r):
             if main_state.collide(self,wisp.water_r):
                 self.HP-=wisp.fire_r.damage
@@ -70,7 +67,38 @@ class Fire_Monster:
                 self.HP-=wisp.leaf.damage
                 game_world.remove_object(wisp.leaf)
                 wisp.leaf.x,wisp.leaf.y=0,0
+        elif (wisp.water1 or wisp.water2 or wisp.water3):
+            if main_state.collide(self, wisp.water1):
+                self.HP -= wisp.water1.damage
+                game_world.remove_object(wisp.water1)
+                wisp.water1.x, wisp.water1.y = 0, 0
 
+            if main_state.collide(self, wisp.water2):
+                self.HP -= wisp.water2.damage
+                game_world.remove_object(wisp.water2)
+                wisp.water2.x, wisp.water2.y = 0, 0
+
+
+            if main_state.collide(self, wisp.water3):
+                self.HP -= wisp.water3.damage
+                game_world.remove_object(wisp.water3)
+                wisp.water3.x, wisp.water3.y = 0, 0
+
+
+        elif (wisp.leaf_w):
+            if main_state.collide(self,wisp.leaf_w):
+                self.HP-=wisp.leaf_w.damage
+                wisp.leaf_w.HP-=self.damage
+                if wisp.leaf_w.HP<1:
+                    game_world.remove_object(wisp.leaf_w)
+                    wisp.leaf_w.x,wisp.leaf_w.y=0,0
+        elif (wisp.leaf_e):
+            if main_state.collide(self,wisp.leaf_w):
+                self.HP-=wisp.leaf_w.damage
+                wisp.leaf_w.HP-=self.damage
+                if wisp.leaf_w.HP<1:
+                    game_world.remove_object(wisp.leaf_w)
+                    wisp.leaf_w.x,wisp.leaf_w.y=0,0
 
 
         if self.HP < 1:

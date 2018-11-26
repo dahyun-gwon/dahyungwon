@@ -10,16 +10,19 @@ from water_r import Water_r
 from leaf_basic_attack import Leaf_basic_attack
 from leaf_e import Leaf_e
 from leaf_w import Leaf_w
+import main_state
 fire_attack=None
 fire_w=None
 fire_e=None
 fire_r=None
-water=None
+water1=None
+water2=None
+water3=None
 water_r=None
 leaf=None
 leaf_e=None
 leaf_w=None
-import main_state
+
 from tiena import  Tiena
 
 PIXEL_PER_METER = (10.0/0.3)
@@ -143,6 +146,7 @@ class Water_Wisp:
     def exit(wisp, event):
         if event==SPACE:
             wisp.water_basic_attack()
+
         elif event == r:
             if(wisp.water_r_timer>=40):
                 wisp.water_r()
@@ -259,9 +263,17 @@ class Wisp:
         fire_r=Fire_r(0,400)
         game_world.add_object(fire_r,1)
     def water_basic_attack(self):
-        global water
-        water=Water_basic_attack(self.x+30+100, self.y-30-30, 1)
-        game_world.add_object(water, 1)
+        global water1
+        global water2
+        global water3
+        water1=Water_basic_attack(self.x+30+100, self.y-30-30,5,0)
+        game_world.add_object(water1, 1)
+        water2 = Water_basic_attack(self.x + 30 + 100, self.y - 30 - 30, 5, 2)
+        game_world.add_object(water2, 1)
+        water3 = Water_basic_attack(self.x + 30 + 100, self.y - 30 - 30, 5, -2)
+        game_world.add_object(water3, 1)
+
+
     def water_r(self):
         global water_r
         water_r=Water_r(self.x+700,self.y-30)

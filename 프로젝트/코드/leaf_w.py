@@ -15,6 +15,8 @@ class Leaf_w:
         self.Xvelocity=0
         self.Yvelocity=0
         self.state = True;
+        self.HP=50
+        self.damage=50
         self.time=3
     def draw(self):
 
@@ -31,4 +33,8 @@ class Leaf_w:
         self.time-=game_framework.frame_time
         if self.time<=0:
             game_world.remove_object(self)
+
+    def XYreturn(self):
+        return self.x - 90, self.y - 90, self.x + 90, self.y + 90
+
 

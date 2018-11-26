@@ -29,3 +29,9 @@ class Leaf_e:
         if self.time<0:
             game_world.remove_object(self)
 
+    def XYreturn(self):
+        return self.x - 75, self.y - 75, self.x + 75, self.y + 75
+
+
+
+

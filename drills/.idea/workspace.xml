@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7006d130-a3c2-4f6a-b82c-8a07236dd855" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drill13/background.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill13/background.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drill13/boy.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill13/boy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drill13/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/drill13/main_state.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/background.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/background.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/enemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/fire_basic_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/fire_basic_attack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/fire_e.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/fire_e.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/fire_r.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/fire_r.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/fire_w.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/fire_w.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/leaf_basic_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/leaf_basic_attack.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/mygame.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/mygame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/stage_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/stage_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../프로젝트/코드/tiena.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/tiena.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/water_basic_attack.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/water_basic_attack.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../프로젝트/코드/wisp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../프로젝트/코드/wisp.py" afterDir="false" />
     </list>
@@ -30,7 +19,7 @@
     <session id="-585685169">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
@@ -121,7 +110,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/drill13/boy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="425">
               <caret line="147" column="101" selection-start-line="147" selection-start-column="87" selection-end-line="147" selection-end-column="101" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -434,7 +423,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26585695" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26585695" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -768,7 +757,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/drill13/boy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="425">
           <caret line="147" column="101" selection-start-line="147" selection-start-column="87" selection-end-line="147" selection-end-column="101" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />

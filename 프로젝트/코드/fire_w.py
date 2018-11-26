@@ -9,7 +9,7 @@ class Fire_w:
             Fire_w.image = load_image('fire_w.png')
         self.x, self.y, self.Xvelocity = x, y, Xvelocity
         self.damage=100
-        self.state = True;
+        self.state = True
 
     def draw(self):
         self.image.draw(self.x,self.y)
