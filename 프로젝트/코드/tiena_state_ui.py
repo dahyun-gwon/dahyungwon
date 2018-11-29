@@ -159,7 +159,6 @@ class Fire_ver_state_ui:
 
     @staticmethod
     def exit(tiena_state_ui, event):
-        print('이게작동되어야함')
         game_world.remove_object(tiena_state_ui.fire_ui_edge)
 
 
@@ -290,8 +289,7 @@ class Tiena_State_Ui:
 
     def draw(self):
         self.cur_state.draw(self)
-        self.image.clip_draw(0,0,200,main_state.tienaa.HP,100,700)
-
+        self.image.clip_draw(0,-(200-main_state.tienaa.HP),200,200,100,700-(200-main_state.tienaa.HP)//2,200,200-(200-main_state.tienaa.HP))
     def handle_event(self,event):
         if (event.type, event.key) in key_event_table:
             key_event = key_event_table[(event.type, event.key)]
