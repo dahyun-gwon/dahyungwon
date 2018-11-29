@@ -34,9 +34,6 @@ TIME_PER_ACTION = 0.5
 ACTION_PER_TIME = 1.0/TIME_PER_ACTION
 FRAMES_PER_ACTION = 8
 
-
-
-#DIAG_LEFTUP_UP,DIAG_RIGHTUP_UP,DIAG_LEFTDOWN_UP,DIAG_RIGHTDOWN_UP,DIAG_LEFTUP_DOWN,DIAG_RIGHTUP_DOWN,DIAG_LEFTDOWN_DOWN,DIAG_RIGHTDOWN_DOWN
 RIGHT_DOWN, LEFT_DOWN, UP_UP, UP_DOWN, DOWN_UP, DOWN_DOWN, RIGHT_UP, LEFT_UP, d,f, w, e, r,SPACE= range(14)
 key_event_table = {
     (SDL_KEYDOWN, SDLK_RIGHT): RIGHT_DOWN,
@@ -53,14 +50,6 @@ key_event_table = {
     (SDL_KEYDOWN, SDLK_e): e,
     (SDL_KEYDOWN, SDLK_r): r,
     (SDL_KEYDOWN, SDLK_SPACE): SPACE
-    #(SDL_KEYUP,SDLK_LEFT and SDLK_UP) : DIAG_LEFTUP_UP,
-    #(SDL_KEYUP,SDLK_RIGHT and SDLK_UP) : DIAG_RIGHTUP_UP,
-    #(SDL_KEYUP,SDLK_LEFT and SDLK_DOWN) : DIAG_LEFTDOWN_UP,
-    #(SDL_KEYUP,SDLK_RIGHT and SDLK_DOWN):DIAG_RIGHTDOWN_UP,
-    #(SDL_KEYDOWN,SDLK_LEFT and SDLK_UP) : DIAG_LEFTUP_DOWN,
-    #(SDL_KEYDOWN,SDLK_RIGHT and SDLK_UP) : DIAG_RIGHTUP_DOWN,
-    #(SDL_KEYDOWN,SDLK_LEFT and SDLK_DOWN) : DIAG_LEFTDOWN_DOWN,
-    #(SDL_KEYDOWN,SDLK_RIGHT and SDLK_DOWN):DIAG_RIGHTDOWN_DOWN
 
 }
 
@@ -211,7 +200,6 @@ class Leaf_Wisp:
 
 
 next_state_table = {
-
     Fire_Wisp: {RIGHT_DOWN: Fire_Wisp, LEFT_DOWN: Fire_Wisp, UP_UP: Fire_Wisp, UP_DOWN: Fire_Wisp,DOWN_UP:Fire_Wisp,DOWN_DOWN:Fire_Wisp,RIGHT_UP:Fire_Wisp,LEFT_UP:Fire_Wisp,d:Leaf_Wisp,f:Water_Wisp,SPACE:Fire_Wisp,e:Fire_Wisp,w:Fire_Wisp,r:Fire_Wisp},
     Water_Wisp: {RIGHT_DOWN: Water_Wisp, LEFT_DOWN: Water_Wisp, UP_UP: Water_Wisp, UP_DOWN: Water_Wisp, DOWN_UP:Water_Wisp,DOWN_DOWN:Water_Wisp,RIGHT_UP:Water_Wisp,LEFT_UP:Water_Wisp,d:Fire_Wisp,f:Leaf_Wisp,SPACE:Water_Wisp,r:Water_Wisp},
     Leaf_Wisp: {RIGHT_DOWN: Leaf_Wisp, LEFT_DOWN:Leaf_Wisp, UP_UP: Leaf_Wisp, UP_DOWN: Leaf_Wisp, DOWN_UP:Leaf_Wisp,DOWN_DOWN:Leaf_Wisp,RIGHT_UP:Leaf_Wisp,LEFT_UP:Leaf_Wisp,d:Water_Wisp,f:Fire_Wisp,SPACE:Leaf_Wisp,w:Leaf_Wisp,e:Leaf_Wisp},
@@ -231,15 +219,12 @@ class Wisp:
         self.Yvelocity=0
         self.i=1
         self.cnt=0
-        self.state = True;
-
+        self.state = True
         self.fire_w_timer=10
         self.fire_e_using_time=0
         self.fire_e_cool_timer=10
         self.fire_r_timer = 40
-
         self.water_r_timer=40
-
         self.leaf_w_timer=20
         self.leaf_e_timer=15
 

@@ -1,49 +1,151 @@
 import game_framework
 from pico2d import *
 import game_world
+import main_state
+d,f= range(2)
+key_event_table = {
+    (SDL_KEYDOWN,SDLK_d):d,
+    (SDL_KEYDOWN, SDLK_f): f,
+}
 
-class Fire_w_ui:
+fire_skill_ui=None
+fire_ui_edge=None
+water_skill_ui=None
+water_ui_edge=None
+leaf_skill_ui=None
+leaf_ui_edge=None
+
+class Fire_skill_ui:
     image = None
     def __init__(self):
-        if Fire_w_ui.image == None:
-            Fire_w_ui.image = load_image('fire_w_ui.png')
-        self.x, self.y=100,100
+        if Fire_skill_ui.image == None:
+            Fire_skill_ui.image = load_image('fire_skill_ui.png')
+        self.x, self.y=600,400
         self.state = True
     def draw(self):
         self.image.draw(self.x,self.y)
     def update(self):
-        pass
-    def handle_event(self):
-        pass
+        if self.state==False:
+            game_world.remove_object(self)
+        print(self.state)
+    def handle_events(self):
+        events = get_events()
+        for event in events:
+            if event.type == SDL_KEYDOWN and  event.key == d :
+                self.state = False
+                print('된다')
+            elif event.type == SDL_KEYDOWN and  event.key == f :
+                self.state = False
 
-class Fire_e_ui:
+class Fire_edge_ui:
+    image=None
+    def __init__(self):
+        if Fire_edge_ui.image==None:
+            Fire_edge_ui.image=load_image('fire_edge_ui.png')
+        self.x,self.y=600,400
+        self.state=True
+    def draw(self):
+        self.image.draw(self.x, self.y)
+    def update(self):
+        if self.state==False:
+            game_world.remove_object(self)
+    def handle_events(self):
+        events = get_events()
+        for event in events:
+            if event.type == SDL_KEYDOWN and  event.key == d :
+                game_world.remove_object(self)
+                self.state = False
+            elif event.type == SDL_KEYDOWN and  event.key == f :
+                game_world.remove_object(self)
+                self.state = False
+
+class Water_skill_ui:
     image = None
     def __init__(self):
-        if Fire_e_ui.image == None:
-            Fire_e_ui.image = load_image('fire_e_ui.png')
-        self.x, self.y=110,100
+        if Water_skill_ui.image == None:
+            Water_skill_ui.image = load_image('water_skill_ui.png')
+        self.x, self.y=600,400
         self.state = True
     def draw(self):
         self.image.draw(self.x,self.y)
     def update(self):
-        pass
-    def handle_event(self):
-        pass
+        if self.state==False:
+            game_world.remove_object(self)
+    def handle_events(self):
+        events = get_events()
+        for event in events:
+            if event.type == SDL_KEYDOWN and  event.key == d :
+                game_world.remove_object(self)
+                self.state = False
+            elif event.type == SDL_KEYDOWN and  event.key == f :
+                game_world.remove_object(self)
+                self.state = False
 
-class Fire_r_ui:
+class Water_edge_ui:
+    image=None
+    def __init__(self):
+        if Water_edge_ui.image==None:
+            Water_edge_ui.image=load_image('water_edge_ui.png')
+        self.x,self.y=600,400
+        self.state=True
+    def draw(self):
+        self.image.draw(self.x, self.y)
+    def update(self):
+        if self.state==False:
+            game_world.remove_object(self)
+    def handle_events(self):
+        events = get_events()
+        for event in events:
+            if event.type == SDL_KEYDOWN and  event.key == d :
+                game_world.remove_object(self)
+                self.state = False
+            elif event.type == SDL_KEYDOWN and  event.key == f :
+                game_world.remove_object(self)
+                self.state = False
+
+class Leaf_skill_ui:
     image = None
     def __init__(self):
-        if Fire_r_ui.image == None:
-            Fire_r_ui.image = load_image('fire_r_ui.png')
-        self.x, self.y=120,100
+        if Leaf_skill_ui.image == None:
+            Leaf_skill_ui.image = load_image('leaf_skill_ui.png')
+        self.x, self.y=600,400
         self.state = True
     def draw(self):
         self.image.draw(self.x,self.y)
     def update(self):
-        pass
-    def handle_event(self):
-        pass
+        if self.state==False:
+            game_world.remove_object(self)
+    def handle_events(self):
+        events = get_events()
+        for event in events:
+            if event.type == SDL_KEYDOWN and  event.key == d :
+                game_world.remove_object(self)
+                self.state = False
+            elif event.type == SDL_KEYDOWN and  event.key == f :
+                game_world.remove_object(self)
+                self.state = False
 
+class Leaf_edge_ui:
+    image=None
+    def __init__(self):
+        if Leaf_edge_ui.image==None:
+            Leaf_edge_ui.image=load_image('leaf_ui_edge.png')
+        self.x,self.y=600,400
+        self.state=True
+    def draw(self):
+        self.image.draw(self.x, self.y)
+    def update(self):
+        if self.state==False:
+            game_world.remove_object(self)
+    def handle_events(self):
+        events = get_events()
+        for event in events:
+            if event.type == SDL_KEYDOWN and  event.key == d:
+                game_world.remove_object(self)
+                self.state = False
+            elif event.type == SDL_KEYDOWN and  event.key == f:
+                game_world.remove_object(self)
+                self.state = False
 
 d,f= range(2)
 key_event_table = { (SDL_KEYDOWN, SDLK_d): d, (SDL_KEYDOWN, SDLK_f): f }
@@ -51,12 +153,16 @@ key_event_table = { (SDL_KEYDOWN, SDLK_d): d, (SDL_KEYDOWN, SDLK_f): f }
 class Fire_ver_state_ui:
     @staticmethod
     def enter(tiena_state_ui, event):
-        pass
+        tiena_state_ui.fire_skill_ui()
+        tiena_state_ui.fire_ui_edge()
 
 
     @staticmethod
     def exit(tiena_state_ui, event):
-        pass
+        print('이게작동되어야함')
+        game_world.remove_object(tiena_state_ui.fire_ui_edge)
+
+
 
 
     @staticmethod
@@ -66,14 +172,15 @@ class Fire_ver_state_ui:
 
     @staticmethod
     def draw(tiena_state_ui):
-        tiena_state_ui.fire_ver_state_ui_image.draw(220,715)
+        pass
 
 
 
 class Water_ver_state_ui:
     @staticmethod
     def enter(tiena_state_ui, event):
-        pass
+        tiena_state_ui.water_skill_ui()
+        tiena_state_ui.water_ui_edge()
 
 
 
@@ -89,18 +196,20 @@ class Water_ver_state_ui:
 
     @staticmethod
     def draw(tiena_state_ui):
-        tiena_state_ui.water_ver_state_ui_image.draw(0,600)
+        pass
 
 class Leaf_ver_state_ui:
     @staticmethod
     def enter(tiena_state_ui, event):
-        pass
+        tiena_state_ui.leaf_skill_ui()
+        tiena_state_ui.leaf_ui_edge()
 
 
 
     @staticmethod
     def exit(tiena_state_ui, event):
         pass
+
 
 
     @staticmethod
@@ -110,7 +219,7 @@ class Leaf_ver_state_ui:
 
     @staticmethod
     def draw(tiena_state_ui):
-        tiena_state_ui.laef_ver_state_ui_image.draw(0,600)
+        pass
 
 
 
@@ -123,25 +232,54 @@ next_state_table = {
 
 class Tiena_State_Ui:
     def __init__(self):
-        global fire_w_ui
-        global fire_e_ui
-        global fire_r_ui
-        Tiena_State_Ui.fire_ver_state_ui_image=load_image('fire_ui.png')
-        Tiena_State_Ui.water_ver_state_ui_image=load_image('water_ui.png')
-        Tiena_State_Ui.leaf_ver_state_ui_image=load_image('leaf_ui.png')
+
+        global fire_skill_ui
+        global fire_ui_edge
+        global water_skill_ui
+        global water_ui_edge
+        global leaf_skill_ui
+        global leaf_ui_edge
         self.cur_state = Fire_ver_state_ui
         self.cur_state.enter(self, None)
         self.x, self.y = 300,600
         self.event_que = []
-        self.state = True;
-        fire_w_ui=Fire_w_ui()
-        fire_e_ui=Fire_e_ui()
-        fire_r_ui=Fire_r_ui()
+        self.hp=200
+        self.state = True
+        self.image=load_image('tiena_hp.png')
 
+    def fire_skill_ui(self):
+        global fire_skill_ui
+        fire_skill_ui = Fire_skill_ui()
+        game_world.add_object(fire_skill_ui, 2)
 
+    def fire_ui_edge(self):
+        global fire_ui_edge
+        fire_ui_edge=Fire_edge_ui()
+        game_world.add_object(fire_ui_edge,4)
+
+    def water_skill_ui(self):
+        global water_skill_ui
+        water_skill_ui=Water_skill_ui()
+        game_world.add_object(water_skill_ui, 2)
+
+    def water_ui_edge(self):
+        global water_ui_edge
+        water_ui_edge=Water_edge_ui()
+        game_world.add_object(water_ui_edge, 4)
+
+    def leaf_skill_ui(self):
+        global leaf_skill_ui
+        leaf_skill_ui=Leaf_skill_ui()
+        game_world.add_object(leaf_skill_ui, 2)
+
+    def leaf_ui_edge(self):
+        global leaf_ui_edge
+        leaf_ui_edge=Leaf_edge_ui()
+        game_world.add_object(leaf_ui_edge,4)
 
     def add_event(self, event):
         self.event_que.insert(0, event)
+
     def update(self):
         self.cur_state.do(self)
         if len(self.event_que) > 0:
@@ -152,6 +290,7 @@ class Tiena_State_Ui:
 
     def draw(self):
         self.cur_state.draw(self)
+        self.image.clip_draw(0,0,200,main_state.tienaa.HP,100,700)
 
     def handle_event(self,event):
         if (event.type, event.key) in key_event_table:
