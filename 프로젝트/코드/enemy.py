@@ -64,20 +64,21 @@ class Fire_Monster:
                 self.HP-=wisp.leaf.damage
                 game_world.remove_object(wisp.leaf)
                 wisp.leaf.x,wisp.leaf.y=0,0
-        if (wisp.water1 or wisp.water2 or wisp.water3):
+        if (wisp.water1):
             if main_state.collide(self, wisp.water1):
                 self.HP -= wisp.water1.damage
                 game_world.remove_object(wisp.water1)
                 wisp.water1.x, wisp.water1.y = 0, 0
+        if(wisp.water2):
             if main_state.collide(self, wisp.water2):
                 self.HP -= wisp.water2.damage
                 game_world.remove_object(wisp.water2)
                 wisp.water2.x, wisp.water2.y = 0, 0
+        if(wisp.water3):
             if main_state.collide(self, wisp.water3):
                 self.HP -= wisp.water3.damage
                 game_world.remove_object(wisp.water3)
                 wisp.water3.x, wisp.water3.y = 0, 0
-
 
         if (wisp.leaf_w):
             if main_state.collide(self,wisp.leaf_w):
@@ -108,12 +109,12 @@ class Lamp_enemy:
 
     def __init__(self,x,y):
         if Lamp_enemy.image == None:
-            Fire_Monster.image = load_image('bomp.png')
+            Fire_Monster.image = load_image('lamp.png')
         self.x=x
         self.y=y
         self.state = True;
-        self.HP = 20
-        self.damage=25
+        self.HP = 1000
+        self.damage=200
         self.Xvelocity=-5
 
     def draw(self):
@@ -122,6 +123,8 @@ class Lamp_enemy:
 
     def update(self):
         self.x +=self.Xvelocity
+        if self.x<800:
+            self.Xvelocity=0
         if self.x < -500 or self.x > 2500:
             game_world.remove_object(self)
         if main_state.collide(self,main_state.tienaa):
@@ -151,15 +154,17 @@ class Lamp_enemy:
                 self.HP-=wisp.leaf.damage
                 game_world.remove_object(wisp.leaf)
                 wisp.leaf.x,wisp.leaf.y=0,0
-        if (wisp.water1 or wisp.water2 or wisp.water3):
+        if (wisp.water1):
             if main_state.collide(self, wisp.water1):
                 self.HP -= wisp.water1.damage
                 game_world.remove_object(wisp.water1)
                 wisp.water1.x, wisp.water1.y = 0, 0
+        if(wisp.water2):
             if main_state.collide(self, wisp.water2):
                 self.HP -= wisp.water2.damage
                 game_world.remove_object(wisp.water2)
                 wisp.water2.x, wisp.water2.y = 0, 0
+        if(wisp.water3):
             if main_state.collide(self, wisp.water3):
                 self.HP -= wisp.water3.damage
                 game_world.remove_object(wisp.water3)

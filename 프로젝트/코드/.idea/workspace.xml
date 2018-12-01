@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24ee3b77-b8bc-4da8-8b52-3ea69fb3e248" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/enemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mygame.py" beforeDir="false" afterPath="$PROJECT_DIR$/mygame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state_1_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/state_1_script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiena_state_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiena_state_ui.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,12 +45,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="29689" />
+          <entry key="py" value="29766" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="29689" />
+          <entry key="Python" value="29766" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -90,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/enemy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
+            <state relative-caret-position="108">
+              <caret line="155" selection-start-line="155" selection-end-line="169" selection-end-column="51" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -784,8 +779,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/enemy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        <state relative-caret-position="108">
+          <caret line="155" selection-start-line="155" selection-end-line="169" selection-end-column="51" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
