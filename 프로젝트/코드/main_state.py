@@ -9,6 +9,7 @@ import wisp
 from tiena_state_ui import Tiena_State_Ui
 from enemy import Fire_Monster
 import title_state
+import state_1_script
 import pause_state
 import tiena_state_ui
 fire_monster=None
@@ -87,6 +88,7 @@ def handle_events():
             wispp.handle_event(event)
             tiena_state_ui.handle_event(event)
 
+
 def update():
     time.update()
     if(time.time==300):
@@ -97,6 +99,7 @@ def update():
         game_object.update()
         if not game_object.state:
             game_world.remove_object(game_object)
+
     delay(0.01)
 
 def draw():

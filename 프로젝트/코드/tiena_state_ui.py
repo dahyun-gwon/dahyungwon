@@ -27,8 +27,7 @@ class Fire_skill_ui:
     def update(self):
         if self.state==False:
             game_world.remove_object(self)
-        print(self.state)
-    def handle_events(self):
+    def handle_event(self):
         events = get_events()
         for event in events:
             if event.type == SDL_KEYDOWN and  event.key == d :
@@ -47,18 +46,18 @@ class Fire_edge_ui:
     def draw(self):
         self.image.draw(self.x, self.y)
     def update(self):
-        if self.state==False:
-            game_world.remove_object(self)
-    def handle_events(self):
+        pass
+
+    def handle_event(self):
         events = get_events()
         for event in events:
             if event.type == SDL_KEYDOWN and  event.key == d :
                 game_world.remove_object(self)
+                print('이게되야함')
                 self.state = False
             elif event.type == SDL_KEYDOWN and  event.key == f :
                 game_world.remove_object(self)
                 self.state = False
-
 class Water_skill_ui:
     image = None
     def __init__(self):
@@ -159,7 +158,7 @@ class Fire_ver_state_ui:
 
     @staticmethod
     def exit(tiena_state_ui, event):
-        game_world.remove_object(tiena_state_ui.fire_ui_edge)
+        pass
 
 
 
