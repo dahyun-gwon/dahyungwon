@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24ee3b77-b8bc-4da8-8b52-3ea69fb3e248" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../리소스/그림/몬스터/lamp.png" beforeDir="false" afterPath="$PROJECT_DIR$/../리소스/그림/몬스터/lamp.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/enemy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lamp.png" beforeDir="false" afterPath="$PROJECT_DIR$/lamp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mygame.py" beforeDir="false" afterPath="$PROJECT_DIR$/mygame.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,25 +36,25 @@
         <counts>
           <entry key="gitattributes" value="2" />
           <entry key="jpg" value="4" />
-          <entry key="png" value="135" />
-          <entry key="py" value="241" />
+          <entry key="png" value="137" />
+          <entry key="py" value="243" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="139" />
+          <entry key="Image" value="141" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="241" />
+          <entry key="Python" value="243" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="29766" />
+          <entry key="py" value="31027" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="29766" />
+          <entry key="Python" value="31027" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -61,22 +65,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="834">
-              <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+            <state relative-caret-position="342">
+              <caret line="99" column="45" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wisp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/enemy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="155" selection-start-line="155" selection-end-line="169" selection-end-column="51" />
+            <state relative-caret-position="-700">
+              <caret line="118" column="25" lean-forward="true" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -107,22 +99,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/start_state.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tiena.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+            <state relative-caret-position="-323">
+              <caret line="66" column="70" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="70" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <marker date="1543421088278" expanded="true" signature="780:781" ph="..." />
@@ -133,20 +113,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/water_ui.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pause.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/fire_basic_attack.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="21" selection-start-line="21" selection-end-line="23" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tiena_state_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="155" column="37" selection-start-line="155" selection-start-column="37" selection-end-line="155" selection-end-column="37" />
+            <state relative-caret-position="153">
+              <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <marker date="1543556050125" expanded="true" signature="593:671" ph="..." />
@@ -154,6 +136,24 @@
                 <marker date="1543556050125" expanded="true" signature="5023:5045" ph="..." />
                 <marker date="1543556050125" expanded="true" signature="5099:5106" ph="..." />
                 <marker date="1543556050125" expanded="true" signature="5384:5404" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stage_ui.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stage_state.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="60" column="7" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+                <marker date="1543210824024" expanded="true" signature="436:437" ph="..." />
               </folding>
             </state>
           </provider>
@@ -169,6 +169,11 @@
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/none.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -197,6 +202,8 @@
       <find>fire_attack</find>
       <find>handle</find>
       <find>print</find>
+      <find>del</find>
+      <find>delay</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -229,9 +236,9 @@
         <option value="$PROJECT_DIR$/pause_state.py" />
         <option value="$PROJECT_DIR$/tiena.py" />
         <option value="$PROJECT_DIR$/state_1_script.py" />
+        <option value="$PROJECT_DIR$/tiena_state_ui.py" />
         <option value="$PROJECT_DIR$/main_state.py" />
         <option value="$PROJECT_DIR$/mygame.py" />
-        <option value="$PROJECT_DIR$/tiena_state_ui.py" />
         <option value="$PROJECT_DIR$/enemy.py" />
       </list>
     </option>
@@ -475,9 +482,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/e_basic.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/leaf_basic_attack.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -519,16 +523,6 @@
     <entry file="file://$PROJECT_DIR$/water_basic_attack.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/fire_basic_attack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="21" selection-start-line="21" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/leaf_w.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -559,24 +553,10 @@
     <entry file="file://$PROJECT_DIR$/fire_ui.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/stage_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1406">
-          <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1543210824024" expanded="true" signature="436:437" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fire_r.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/fire_edge_ui.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stage_ui.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/leaf_e.png">
@@ -697,18 +677,6 @@
     <entry file="file://$PROJECT_DIR$/pause.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tiena.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1543421088278" expanded="true" signature="780:781" ph="..." />
-            <marker date="1543421088278" expanded="true" signature="4325:4331" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/water_ui.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -732,12 +700,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_state.py">
+    <entry file="file://$PROJECT_DIR$/tiena.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="834">
-          <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+        <state relative-caret-position="-323">
+          <caret line="66" column="70" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="70" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1543421088278" expanded="true" signature="780:781" ph="..." />
+            <marker date="1543421088278" expanded="true" signature="4325:4331" ph="..." />
           </folding>
         </state>
       </provider>
@@ -754,8 +724,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tiena_state_ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="155" column="37" selection-start-line="155" selection-start-column="37" selection-end-line="155" selection-end-column="37" />
+        <state relative-caret-position="153">
+          <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <marker date="1543556050125" expanded="true" signature="593:671" ph="..." />
@@ -763,6 +733,30 @@
             <marker date="1543556050125" expanded="true" signature="5023:5045" ph="..." />
             <marker date="1543556050125" expanded="true" signature="5099:5106" ph="..." />
             <marker date="1543556050125" expanded="true" signature="5384:5404" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_ui.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stage_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="60" column="7" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1543210824024" expanded="true" signature="436:437" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fire_basic_attack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="21" selection-start-line="21" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -777,10 +771,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/none.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="99" column="45" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/enemy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="155" selection-start-line="155" selection-end-line="169" selection-end-column="51" />
+        <state relative-caret-position="-700">
+          <caret line="118" column="25" lean-forward="true" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

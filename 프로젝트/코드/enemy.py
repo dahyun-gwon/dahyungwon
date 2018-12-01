@@ -109,22 +109,56 @@ class Lamp_enemy:
 
     def __init__(self,x,y):
         if Lamp_enemy.image == None:
-            Fire_Monster.image = load_image('lamp.png')
+            Lamp_enemy.image = load_image('lamp.png')
+        self.collid_state=0
         self.x=x
         self.y=y
-        self.state = True;
+        self.state = True
         self.HP = 1000
         self.damage=200
         self.Xvelocity=-5
+        self.frame=0
+        self.cnt=0
+        self.frame2=600
+        self.framecnt=0
 
     def draw(self):
-        self.image.draw(self.x,self.y)
-        draw_rectangle(*self.XYreturn())
+            self.image.clip_draw(self.frame * 150,self.frame2, 150, 200,self.x,self.y)
+            draw_rectangle(*self.XYreturn())
 
     def update(self):
-        self.x +=self.Xvelocity
-        if self.x<800:
+        if self.state==True :
+            print("살아잇음")
+        elif self.state==False:
+            print("죽음")
+        self.x += self.Xvelocity
+        if self.x==800:
             self.Xvelocity=0
+            self.framecnt += 1
+            if self.framecnt == 3:
+                self.frame += 1
+                self.framecnt = 0
+                self.cnt+=1
+                self.frame = self.frame % 10
+
+            if self.cnt == 10:
+                self.frame2 = 400
+                self.collid_state=1
+            elif self.cnt == 20:
+                self.frame2 = 200
+            elif self.cnt == 30:
+                self.frame2 = 0
+            elif self.cnt == 40:
+                self.frame2 = 200
+            elif self.cnt==50:
+                self.frame2=800
+                self.collid_state=0
+            elif self.cnt == 80:
+                self.frame2 = 600
+                self.cnt=0
+
+
+
         if self.x < -500 or self.x > 2500:
             game_world.remove_object(self)
         if main_state.collide(self,main_state.tienaa):
@@ -192,5 +226,8 @@ class Lamp_enemy:
             game_world.remove_object(self)
 
     def XYreturn(self):
-        return self.x-10,self.y-25,self.x+10,self.y+25
+        if self.collid_state==0:
+            return 0,0,0,0
+        else:
+            return self.x-50,self.y-75,self.x+50,self.y+75
 

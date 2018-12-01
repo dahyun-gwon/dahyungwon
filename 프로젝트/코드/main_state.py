@@ -8,12 +8,15 @@ import state_1_script
 import wisp
 from tiena_state_ui import Tiena_State_Ui
 from enemy import Fire_Monster
+from enemy import Lamp_enemy
 import title_state
 import state_1_script
 import pause_state
 import tiena_state_ui
+
 fire_monster=None
 fire_monsters1=[]
+lamp_enemy1=None
 tienaa=None
 wispp=None
 background=None
@@ -52,9 +55,11 @@ def enter():
     global fire_monsters1
     global fire_monsters2
     global skill_ui
+    global lamp_enemy1
     game_framework.push_state(state_1_script)
     skill_ui=Tiena_State_Ui()
     tienaa=Tiena()
+    lamp_enemy1=Lamp_enemy(1200,500)
     fire_monsters1 = [Fire_Monster(i, j) for (i, j) in [(1200, 500), (1250, 500), (1300, 500), (1350, 500)]]
     fire_monsters2 = [Fire_Monster(i, j) for (i, j) in [(1200, 200), (1250, 200), (1300, 200), (1350, 200)]]
     time=State_time()
@@ -91,9 +96,11 @@ def handle_events():
 
 def update():
     time.update()
+    if (time.time==120):
+        game_world.add_object(lamp_enemy1, 1)
     if(time.time==300):
         game_world.add_objects(fire_monsters1,2)
-    elif(time.time==480):
+    if(time.time==480):
         game_world.add_objects(fire_monsters2,2)
     for game_object in game_world.all_objects():
         game_object.update()
