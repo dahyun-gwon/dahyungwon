@@ -17,8 +17,9 @@ class Fire_r:
 
     def update(self):
         self.x += self.Xvelocity*8
-        if self.x < 0 or self.x > 1800:
+        if self.x < 0 or self.x > 1300:
             game_world.remove_object(self)
-
+    def handle_events(self,event):
+        pass
     def XYreturn(self):
         return self.x - 130, self.y - 400, self.x + 130, self.y + 400

@@ -3,12 +3,14 @@ from pico2d import *
 import game_world
 import main_state
 import enemy
+import lamp_attack
+import lamp_attack2
+import planet
 
-
-
-PIXEL_PER_METER = (10.0/0.3)
+DISTANCE=0.3   #수치 적을수록 가까이
+PIXEL_PER_METER = 90/1.5
 i=1
-RUN_SPEED_KMPH = 30.0
+RUN_SPEED_KMPH = 60.0
 RUN_SPEED_MPM = (RUN_SPEED_KMPH*1000.0/60.0)
 RUN_SPEED_MPS = (RUN_SPEED_MPM/60.0)
 RUN_SPEED_PPS = (RUN_SPEED_MPS*PIXEL_PER_METER)
@@ -32,21 +34,21 @@ class IdleState:
     @staticmethod
     def enter(tiena, event):
         if event == RIGHT_DOWN:
-            tiena.Xvelocity += RUN_SPEED_PPS
+            tiena.Xvelocity += RUN_SPEED_PPS*DISTANCE
         elif event == LEFT_DOWN:
-            tiena.Xvelocity -= RUN_SPEED_PPS
+            tiena.Xvelocity -= RUN_SPEED_PPS*DISTANCE
         elif event == RIGHT_UP:
-            tiena.Xvelocity -= RUN_SPEED_PPS
+            tiena.Xvelocity -= RUN_SPEED_PPS*DISTANCE
         elif event == LEFT_UP:
-            tiena.Xvelocity += RUN_SPEED_PPS
+            tiena.Xvelocity += RUN_SPEED_PPS*DISTANCE
         elif event == UP_UP:
-            tiena.Yvelocity -= RUN_SPEED_PPS
+            tiena.Yvelocity -= RUN_SPEED_PPS*DISTANCE
         elif event == UP_DOWN:
-            tiena.Yvelocity+=RUN_SPEED_PPS
+            tiena.Yvelocity+=RUN_SPEED_PPS*DISTANCE
         elif event == DOWN_UP:
-            tiena.Yvelocity+=RUN_SPEED_PPS
+            tiena.Yvelocity+=RUN_SPEED_PPS*DISTANCE
         elif event==DOWN_DOWN:
-            tiena.Yvelocity-=RUN_SPEED_PPS
+            tiena.Yvelocity-=RUN_SPEED_PPS*DISTANCE
 
 
 
@@ -73,21 +75,21 @@ class GoState:
     @staticmethod
     def enter(tiena, event):
         if event == RIGHT_DOWN:
-            tiena.Xvelocity += RUN_SPEED_PPS
+            tiena.Xvelocity += RUN_SPEED_PPS*DISTANCE
         elif event == LEFT_DOWN:
-            tiena.Xvelocity -= RUN_SPEED_PPS
+            tiena.Xvelocity -= RUN_SPEED_PPS*DISTANCE
         elif event == RIGHT_UP:
-            tiena.Xvelocity -= RUN_SPEED_PPS
+            tiena.Xvelocity -= RUN_SPEED_PPS*DISTANCE
         elif event == LEFT_UP:
-            tiena.Xvelocity += RUN_SPEED_PPS
+            tiena.Xvelocity += RUN_SPEED_PPS*DISTANCE
         elif event == UP_UP:
-            tiena.Yvelocity -= RUN_SPEED_PPS
+            tiena.Yvelocity -= RUN_SPEED_PPS*DISTANCE
         elif event == UP_DOWN:
-            tiena.Yvelocity+=RUN_SPEED_PPS
+            tiena.Yvelocity+=RUN_SPEED_PPS*DISTANCE
         elif event == DOWN_UP:
-            tiena.Yvelocity+=RUN_SPEED_PPS
+            tiena.Yvelocity+=RUN_SPEED_PPS*DISTANCE
         elif event==DOWN_DOWN:
-            tiena.Yvelocity-=RUN_SPEED_PPS
+            tiena.Yvelocity-=RUN_SPEED_PPS*DISTANCE
 
 
 
@@ -115,6 +117,28 @@ next_state_table = {
     IdleState: {RIGHT_DOWN: GoState, LEFT_DOWN: GoState, UP_UP: GoState, UP_DOWN: GoState, DOWN_UP:GoState,DOWN_DOWN:GoState,RIGHT_UP:GoState,LEFT_UP:GoState},
     GoState: {RIGHT_DOWN: IdleState, LEFT_DOWN: IdleState, UP_UP: IdleState, UP_DOWN: IdleState,DOWN_UP:IdleState,DOWN_DOWN:IdleState,RIGHT_UP:IdleState,LEFT_UP:IdleState},
 }
+class Failed_Tiena:
+    def __init__(self,x,y):
+        self.image = load_image('failed.png')
+        self.x=x
+        self.y=y
+
+        self.state = True
+        self.frame=0
+
+    def update(self):
+        self.y-=10
+        self.frame+=self.frame%10
+
+
+    def draw(self):
+        self.image.clip_draw(self.frame*150,0,150,150,self.x,self.y)
+
+    def handle_events(self,event):
+        pass
+
+    def XYreturn(self):
+        pass
 
 class Tiena:
     def __init__(self):
@@ -131,9 +155,7 @@ class Tiena:
         self.cur_state = IdleState
         self.cur_state.enter(self, None)
         self.damage=100
-
-
-        self.state = True;
+        self.state = True
 
 
     def add_event(self, event):
@@ -145,14 +167,33 @@ class Tiena:
             self.cur_state.exit(self, event)
             self.cur_state = next_state_table[self.cur_state][event]
             self.cur_state.enter(self, event)
+        self.x=clamp(0, self.x, 1200)
+        self.y = clamp(0, self.y, 800)
+
+        for i in range(len(game_world.objects)):
+            for o in game_world.objects[i]:
+                if type(o) == enemy.Fire_Monster:
+                    if main_state.collide(self,o):
+                        main_state.tiena_HP-=50
+                        game_world.remove_object(o)
+                if type(o) == enemy.Lamp_enemy:
+                    if main_state.collide(self,o):
+                        main_state.tiena_HP-=200
+                        game_world.remove_object(o)
+                if type(o) == enemy.Lamp_enemy:
+                    if main_state.collide(self,o):
+                        main_state.tiena_HP-=200
+                        game_world.remove_object(o)
+                if type(o) == planet.Planet:
+                    if main_state.collide(self,o):
+                        main_state.tiena_HP-=80
+                        game_world.remove_object(o)
 
 
-
-
-
-        if(self.HP<1):
-            self.state=False
-            self.x,self.y=0,0
+        if(main_state.tiena_HP<1):
+            fail_tiena=Failed_Tiena(self.x,self.y)
+            game_world.add_object(fail_tiena,2)
+            game_world.remove_object(self)
 
 
 
@@ -161,13 +202,13 @@ class Tiena:
     def draw(self):
         self.cur_state.draw(self)
 
-    def handle_event(self,event):
+    def handle_events(self,event):
         if (event.type, event.key) in key_event_table:
             key_event = key_event_table[(event.type, event.key)]
             self.add_event(key_event)
 
     def XYreturn(self):
-        return self.x-25,self.y-25,self.x+25,self.y+25
+        return self.x-40,self.y-35,self.x+40,self.y+35
 
     def XY(self):
         return self.x,self.y
@@ -175,5 +216,3 @@ class Tiena:
         return self.x
     def Y(self):
         return self.y
-    def killed(self):
-        game_world.remove_object(self)

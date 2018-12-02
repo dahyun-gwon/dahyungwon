@@ -14,24 +14,27 @@ class Leaf_w:
         self.x, self.y= x, y
         self.Xvelocity=0
         self.Yvelocity=0
-        self.state = True;
-        self.HP=50
+        self.state = True
+        self.HP=2000
         self.damage=50
         self.time=3
     def draw(self):
 
         self.image.draw(self.x,self.y)
 
-    def handle_event(self,event):
+    def handle_events(self,event):
         pass
 
 
     def update(self):
-        self.x,self.y = main_state.tienaa.XY()
-        self.x+=self.Xvelocity
-        self.y+=self.Yvelocity
+        for o in game_world.objects[2]:
+            if type(o) == main_state.Tiena:
+                self.x = o.x
+                self.y = o.y
         self.time-=game_framework.frame_time
         if self.time<=0:
+            game_world.remove_object(self)
+        if self.HP<=0:
             game_world.remove_object(self)
 
     def XYreturn(self):

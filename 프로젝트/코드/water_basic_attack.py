@@ -17,15 +17,15 @@ class Water_basic_attack:
 
     def draw(self):
         self.image.draw(self.x, self.y)
-        draw_rectangle(*self.XYreturn())
 
     def update(self):
         self.x += self.Xvelocity
         self.y+=self.Yvelocity
 
-        if self.x < 25 or self.x > 1600 - 25:
+        if self.x < 0 or self.x > 1600 - 25:
             game_world.remove_object(self)
-
+    def handle_events(self,event):
+        pass
     def XYreturn(self):
         return self.x-15,self.y-15,self.x+15,self.y+15
 

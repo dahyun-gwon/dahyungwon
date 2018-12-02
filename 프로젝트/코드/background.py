@@ -38,7 +38,7 @@ class Background:
 
 
 
-    def handle_event(self,event):
+    def handle_events(self,event):
         pass
 
     def draw(self):

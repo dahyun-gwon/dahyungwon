@@ -17,7 +17,8 @@ class Leaf_e:
     def draw(self):
         self.image.clip_draw(self.frame*150,0,150,150,self.x,self.y)
 
-
+    def handle_events(self,event):
+        pass
 
     def update(self):
         if (self.cnt == 3):

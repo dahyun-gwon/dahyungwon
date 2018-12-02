@@ -8,13 +8,16 @@ image = None
 class State_1_Script:
     def __init__(self):
         self.image = load_image('bastup.png')
+        self.back=load_image('universe.jpg')
         self.script_image=load_image('1.png')
         self.cnt=1
         self.state=True
 
 
     def draw(self):
+        self.back.draw(600, 400)
         self.image.draw(600,400)
+
         self.script_image.draw(600,400)
 
     def update(self):
@@ -24,6 +27,7 @@ class State_1_Script:
 
 def enter():
     global image
+
     image = State_1_Script()
     game_world.add_object(image,1)
 
@@ -59,9 +63,6 @@ def handle_events():
 
 def draw():
     clear_canvas()
-    main_state.tienaa.draw()
-    main_state.wispp.draw()
-    main_state.background.draw()
     image.draw()
     update_canvas()
 
